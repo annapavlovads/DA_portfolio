@@ -32,10 +32,10 @@ Task:
 `python` `numpy` `scipy stats` 
 
 ## Text classification model 
-[IPYNB file - Text clf model]() <br>
+[IPYNB file - Text clsf model]() <br>
 `python` `pandas` 
 
 ## Tableau dashboard 
 [Tableau portfolio page]() <br> 
-`tablea`
+`tableau`
 
