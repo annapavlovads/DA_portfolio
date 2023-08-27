@@ -17,9 +17,9 @@ Task: to create an automatic daily report from the database to the Telegram bot.
 `python` `pandas` `plotly` `seaborn` `matplotlib` `numpy` `orbit` 
 
 ## ETL-pipeline
-[ETL_pipeline_DAG.py](https://github.com/annapavlovads/DA_portfolio)
-Task: ETL-pipeline daily exctracting data from `clickhouse` database, transforming with`python`-script and loading result to database with `Apache Airflow` DAG
-Задача: создание ETL-пайплайна, ежедневно выгружающего данные из `clickhouse`, преобразующего их с помощью `python`-скрипта и загружающего таблицу в базу данных с помощью автоматизации `DAG` в `Apache Airflow`
+[ETL_pipeline_DAG.py](https://github.com/annapavlovads/DA_portfolio) <br>
+Task: ETL-pipeline daily exctracting data from `clickhouse` database, transforming with`python`-script and loading result to database with `Apache Airflow` DAG <br>
+Задача: создание ETL-пайплайна, ежедневно выгружающего данные из `clickhouse`, преобразующего их с помощью `python`-скрипта и загружающего таблицу в базу данных с помощью автоматизации `DAG` в `Apache Airflow` <br>
 `python` `clickhouse` `apache airflow` 
 
 ## Superset Dashboards (ClickHouse)
