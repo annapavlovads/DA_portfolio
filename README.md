@@ -2,6 +2,7 @@
 Data Analytics portfolio
 
 ## Automatic reports (TG-bot)
+Task: to create an automatic daily report from the database to the Telegram bot. 
 `python` `clickhouse` `gitlab ci\cd` `telegram-bot` `seaborn`
 
 ## Automatic reports + anomaly alerts to TG-bot
