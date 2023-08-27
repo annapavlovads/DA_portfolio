@@ -22,6 +22,7 @@ Task: ETL-pipeline daily exctracting data from `clickhouse` database, transformi
 `python` `clickhouse` `apache airflow` `sql`
 
 ## Superset Dashboards (ClickHouse)
+[SQL requests]() ---- [Dashboards]()
 `superset` `clickhouse` `sql` 
 
 ## AB-tests
