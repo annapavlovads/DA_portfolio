@@ -28,7 +28,7 @@ Task:
 `superset` `clickhouse` `sql` 
 
 ## AB-tests
-[IPYNB file - AB tests]()
+[IPYNB file - AB tests]() <br>
 `python` `numpy` `scipy stats` 
 
 ## Text classification model 
