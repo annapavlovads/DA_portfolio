@@ -1,7 +1,7 @@
 # Data Analytics Portfolio (Under Construction till 01 Dec 2023)
 
 ## Automatic reports (TG-bot) / Автоматический отчет в Телеграм-бот 
-[Python script file](https://github.com/annapavlovads/DA_portfolio/edit/main/README.md) ---- [Report example | Пример отчета](https://github.com/annapavlovads/DA_portfolio/edit/main/README.md)<br>
+[Airflow DAG Python script](https://github.com/annapavlovads/DA_portfolio/edit/main/README.md) ---- [Report example | Пример отчета](https://github.com/annapavlovads/DA_portfolio/edit/main/README.md)<br>
 Task: to create an automatic daily report from the database to the Telegram bot. <br>
 Задача: создание автоматической отчетности, поступающей в Телеграм-бот по расписанию (ежедневно) <br>
 `python` `clickhouse` `gitlab ci\cd` `telegram-bot` `docker` `seaborn`
