@@ -1,7 +1,7 @@
 # DA_portfolio
 Data Analytics portfolio
 
-## Automatic reports (TG-bot) / Автоматическая отчетность в Телеграм-бот
+## Automatic reports (TG-bot) / Автоматический отчет в Телеграм-бот (по расписанию)
 Task: to create an automatic daily report from the database to the Telegram bot. <br>
 Задача: создание автоматической отчетности из базы данных в Телеграм-бот <br>
 `python` `clickhouse` `gitlab ci\cd` `telegram-bot` `docker` `seaborn`
