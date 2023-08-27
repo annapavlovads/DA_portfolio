@@ -22,15 +22,20 @@ Task: ETL-pipeline daily exctracting data from `clickhouse` database, transformi
 `python` `clickhouse` `apache airflow` `sql`
 
 ## Superset Dashboards (ClickHouse)
-[SQL requests]() ---- [Dashboards]()
+[SQL requests]() ---- [Dashboards]() <br>
+Task: 
+Задача: 
 `superset` `clickhouse` `sql` 
 
 ## AB-tests
+[IPYNB file - AB tests]()
 `python` `numpy` `scipy stats` 
 
 ## Text classification model 
+[IPYNB file - Text clf model]() <br>
 `python` `pandas` 
 
 ## Tableau dashboard 
+[Tableau portfolio page]() <br> 
 `tablea`
 
