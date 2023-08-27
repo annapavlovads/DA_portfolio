@@ -1,5 +1,4 @@
-# DA_portfolio (Under Construction till 01 Dec 2023)
-Data Analytics portfolio
+# Data Analytics ortfolio (Under Construction till 01 Dec 2023)
 
 ## Automatic reports (TG-bot) / Автоматический отчет в Телеграм-бот 
 [automatic_report.py](https://github.com/annapavlovads/DA_portfolio/edit/main/README.md) ---- [Report example | Пример отчета](https://github.com/annapavlovads/DA_portfolio/edit/main/README.md)<br>
