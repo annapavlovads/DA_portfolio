@@ -40,3 +40,9 @@ Task:
 [Tableau portfolio page]() <br> 
 `tableau`
 
+## Gradient Descent | Градиентный спуск 
+Задача: реализовать градиентный спуск на `python`
+
+## Python web page parcer | Парсер на python
+`beautiful soup` `python` 
+
