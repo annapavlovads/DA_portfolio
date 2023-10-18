@@ -39,17 +39,7 @@ Task: to create an automatic daily report from the database to the Telegram bot.
 [IPYNB file - AB tests]() <br>
 `python` `numpy` `scipy stats` 
 
-## Text classification model 
-[IPYNB file - Text clsf model]() <br>
-`python` `pandas` 
-
 ## Tableau dashboard 
 [Tableau portfolio page]() <br> 
 `tableau`
-
-## Gradient Descent | Градиентный спуск 
-Задача: реализовать градиентный спуск на `python`
-
-## Python web page parcer | Парсер на python
-`beautiful soup` `python` 
 
