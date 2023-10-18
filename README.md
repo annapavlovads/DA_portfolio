@@ -19,9 +19,9 @@ Task: <br><br>
 
 ## ETL-pipeline
 `Apache Airflow` `Clickhouse` `Telegram-bot` `Seaborn` `Python` `SQL`<br><br>
-[Airflow DAG Python script](https://github.com/annapavlovads/DA_portfolio/blob/4e762b085ed0b88933d80835c3ee9334fa1756e1/ETL_pipeline_DAG.py)<br>
-Task: ETL-pipeline daily exctracting data from `clickhouse` database, transforming with`python`-script and loading result to database with `Apache Airflow` DAG <br>
-Задача: создание ETL-пайплайна, ежедневно выгружающего данные из clickhouse, преобразующего их с помощью python-скрипта и загружающего таблицу в базу данных с помощью автоматизации DAG в Apache Airflow <br>
+[Airflow DAG Python script](https://github.com/annapavlovads/DA_portfolio/blob/4e762b085ed0b88933d80835c3ee9334fa1756e1/ETL_pipeline_DAG.py)<br><br>
+Задача: создание ETL-пайплайна, ежедневно выгружающего данные из clickhouse, преобразующего их с помощью python-скрипта и загружающего таблицу в базу данных с помощью автоматизации DAG в Apache Airflow <br><br>
+Task: ETL-pipeline daily exctracting data from clickhouse database, transforming with python-script and loading result to database with Apache Airflow DAG <br>
 
 ## Superset Dashboards (ClickHouse)
 [SQL requests]() ---- [Dashboards]() <br>
