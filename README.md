@@ -24,10 +24,13 @@ Task: <br><br>
 Task: ETL-pipeline daily exctracting data from clickhouse database, transforming with python-script and loading result to database with Apache Airflow DAG <br>
 
 ## Superset Dashboards (ClickHouse)
-[SQL requests]() ---- [Dashboards]() <br>
+`superset` `clickhouse` `sql` 
 Task: 
 Задача: 
-`superset` `clickhouse` `sql` 
+[Дашборд: продажи в ресторане](https://github.com/annapavlovads/DA_portfolio/blob/main/pl_dashboards/pl_sales_dashboard/%D0%94%D0%B0%D1%88%D0%B1%D0%BE%D1%80%D0%B4_%D0%9F%D0%9B_%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8_%D0%B2_%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%D0%B5.jpg) | [Документация](https://github.com/annapavlovads/DA_portfolio/blob/main/pl_dashboards/pl_sales_dashboard/%D0%94%D0%B0%D1%88%D0%B1%D0%BE%D1%80%D0%B4%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%20%D0%BB%D0%BE%D1%8F%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8%20%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD%D0%B0%20(%D0%B0%D0%BB%D1%8F%D0%BA%D0%B0%D1%80%D1%82%20%2B%20%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0%20%D1%81%D0%B0%D0%BC%D0%BE%D0%B2%D1%8B%D0%B2%D0%BE%D0%B7).pdf) | [SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/pl_dashboards/pl_sales_dashboard/dataset_request.txt.txt)<br>
+[Дашборд: гостевая база ресторана]()<br>
+[Дашборд: базовые метрики]()<br>
+
 
 ## Automatic reports (TG-bot) / Автоматический отчет в Телеграм-бот 
 `Apache Airflow` `Clickhouse` `Telegram-bot` `Seaborn` `Python` `SQL`<br><br>
