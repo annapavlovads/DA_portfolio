@@ -1,6 +1,15 @@
 # Data Analytics Portfolio 
 (Under Construction till 01 Jan 2024)
+## Содержание
+[Automatic alert (TG-bot) / Алерт в Телеграм-бот при значительном изменении метрик](https://github.com/annapavlovads/DA_portfolio/tree/main#automatic-alert-tg-bot--%D0%B0%D0%BB%D0%B5%D1%80%D1%82-%D0%B2-%D1%82%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D0%BC-%D0%B1%D0%BE%D1%82-%D0%BF%D1%80%D0%B8-%D0%B7%D0%BD%D0%B0%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B8-%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA)<br>
+[Exploratory Data Analysis / Исследовательский анализ данных](https://github.com/annapavlovads/DA_portfolio/tree/main#exploratory-data-analysis)<br>
+[Система дашбордов для ресторанов в Superset | Superset Dashboards](https://github.com/annapavlovads/DA_portfolio/tree/main#superset-dashboards-clickhouse)<br>
+[ETL-pipeline](https://github.com/annapavlovads/DA_portfolio/tree/main#etl-pipeline)<br>
+[Automatic reports (TG-bot) | Автоматический отчет в Телеграм-бот](https://github.com/annapavlovads/DA_portfolio/tree/main#automatic-reports-tg-bot--%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D0%BE%D1%82%D1%87%D0%B5%D1%82-%D0%B2-%D1%82%D0%B5%D0%BB%D0%B5%D0%B3%D1%80%D0%B0%D0%BC-%D0%B1%D0%BE%D1%82)<br>
 
+<br>
+<br>
+<br>
 ## Automatic alert (TG-bot) / Алерт в Телеграм-бот при значительном изменении метрик 
 `Python` `Clickhouse` `Gitlab ci\cd` `Telegram-bot` `Docker` `Seaborn` `Apache Airflow` `SQL`<br><br>
 [Airflow DAG Python script](https://github.com/annapavlovads/DA_portfolio/blob/main/airflow_dag_etl_tg_bot_reports/an_pavlova_15_min_bot_alert.py) || [Report example](https://drive.google.com/file/d/1j-aiejRbDkbRsspF-a7qtYXs7fUWMQCm/view?usp=share_link)<br><br>
@@ -23,7 +32,7 @@ Task: <br><br>
 Задача: создание ETL-пайплайна, ежедневно выгружающего данные из clickhouse, преобразующего их с помощью python-скрипта и загружающего таблицу в базу данных с помощью автоматизации DAG в Apache Airflow <br><br>
 Task: ETL-pipeline daily exctracting data from clickhouse database, transforming with python-script and loading result to database with Apache Airflow DAG <br>
 
-## Superset Dashboards (ClickHouse)
+## Система дашбордов для ресторанов в Superset | Superset Dashboards 
 `superset` `clickhouse` `sql` <br>
 Task: <br>
 Задача: <br><br>
