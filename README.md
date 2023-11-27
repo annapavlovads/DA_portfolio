@@ -10,9 +10,10 @@
 <br>
 <br>
 <br>
+
 ## Automatic alert (TG-bot) / Алерт в Телеграм-бот при значительном изменении метрик 
 `Python` `Clickhouse` `Gitlab ci\cd` `Telegram-bot` `Docker` `Seaborn` `Apache Airflow` `SQL`<br><br>
-[Airflow DAG Python script](https://github.com/annapavlovads/DA_portfolio/blob/main/airflow_dag_etl_tg_bot_reports/an_pavlova_15_min_bot_alert.py) || [Report example](https://drive.google.com/file/d/1j-aiejRbDkbRsspF-a7qtYXs7fUWMQCm/view?usp=share_link)<br><br>
+[Airflow DAG Python script](https://github.com/annapavlovads/DA_portfolio/blob/main/airflow_dag_etl_tg_bot_reports/an_pavlova_15_min_bot_alert.py) | [Report example](https://drive.google.com/file/d/1j-aiejRbDkbRsspF-a7qtYXs7fUWMQCm/view?usp=share_link)<br><br>
 Задача: Система должна с периодичностью 15 минут проверять ключевые метрики, такие как активные пользователи в ленте / мессенджере, просмотры, лайки, CTR, количество отправленных сообщений. В случае обнаружения аномального значения, в чат должен отправиться алерт - сообщение со следующей информацией: метрика, ее значение, величина отклонения, а также график, ссылка на дашборд/чарт в BI системе. <br>
 <br>
 Task: The system checks the key metrics every 15 minutes. The key metrics are: active users in the feed / messenger, views, likes, CTR, the number of messages sent. If any abnormal value is detected, an alert message is to be sent to the chat. The message contains: the metric, its value, the deviation value, graph, a link to the dashboard / chart in the BI system. <br>
