@@ -1,11 +1,7 @@
 
 ## 1. Исследовательский анализ данных 
-#### Исследование клиентской базы
-[Client EDA](https://github.com/annapavlovads/DA_portfolio/blob/main/eda/README.md)
-
-#### Исследование продаж по каналам продаж (самовывоз, доставка, алякарт)
-`Python` `Pandas` `Seaborn` `Matplotlib` `Numpy`
-
+[EDA клиентской базы](https://github.com/annapavlovads/DA_portfolio/blob/main/eda/README.md)
+[EDA продаж по каналам продаж (самовывоз, доставка, алякарт)](github.com)
 
 ## 2. ABC-, XYZ-, RFM-анализ 
 #### RFM-сегментация
