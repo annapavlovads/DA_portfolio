@@ -1,7 +1,6 @@
 
 ## 1. Исследовательский анализ данных 
-[EDA клиентской базы](https://github.com/annapavlovads/DA_portfolio/blob/main/eda/README.md) <br>
-[EDA продаж по каналам продаж (самовывоз, доставка, алякарт)](github.com)
+[>>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)
 
 ## 2. ABC-, XYZ-, RFM-анализ 
 #### RFM-сегментация
