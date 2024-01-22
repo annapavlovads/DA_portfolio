@@ -1,7 +1,7 @@
 
 ## 1. Исследовательский анализ данных 
 #### Исследование клиентской базы
-`Python` `Pandas` `Seaborn` `Matplotlib` `Numpy`
+[Client EDA](https://github.com/annapavlovads/DA_portfolio/blob/main/eda/README.md)
 
 #### Исследование продаж по каналам продаж (самовывоз, доставка, алякарт)
 `Python` `Pandas` `Seaborn` `Matplotlib` `Numpy`
