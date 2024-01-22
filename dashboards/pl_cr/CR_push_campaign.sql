@@ -1,4 +1,11 @@
-select contact_id,
+SELECT count(DISTINCT contact_id) AS "Отправлено пуш, контактов",
+       countIf(DISTINCT contact_id, message_state_name<>'Ошибка') / COUNT(DISTINCT contact_id) AS "Уровень доставки, %",
+       COUNT(DISTINCT day_7_visit) / countIf(DISTINCT contact_id, message_state_name<>'Ошибка') AS "СR 7 дней, %",
+       COUNT(DISTINCT day_14_visit) / countIf(DISTINCT contact_id, message_state_name<>'Ошибка') AS "СR 14 дней, %",
+       sum(day_7_cheq) AS "Выручка СR 7 дней, руб.",
+       sum(day_14_cheq) AS "Выручка СR 14 дней, руб."
+FROM
+  (select contact_id,
           send_date,
           message_state_name,
           case
@@ -39,4 +46,7 @@ select contact_id,
             send_date,
             message_state_name,
             day_7_visit,
-            day_14_visit
+            day_14_visit) AS virtual_table
+WHERE send_date >= toDate('2023-10-22')
+  AND send_date < toDate('2024-01-22')
+ORDER BY "Отправлено пуш, контактов" DESC
