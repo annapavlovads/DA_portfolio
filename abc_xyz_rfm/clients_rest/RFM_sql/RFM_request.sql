@@ -1,4 +1,4 @@
-select 
+SELECT
       contact_id,
       first_name,
       mobile_phone, 
