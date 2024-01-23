@@ -41,9 +41,7 @@ FROM
       FROM dwh.chequeitems_retro
       WHERE is_del = 0
       group by contact_id) as t2 using contact_id) AS virtual_table
-WHERE date_time >= toDateTime('2023-12-01 00:00:00')
-  AND date_time < toDateTime('2024-01-01 00:00:00')
-  AND is_first_order = '1'
+WHERE is_first_order = '1'
 GROUP BY ea_ch,
          toMonday(toDateTime(date_time))
 ORDER BY "COUNT_DISTINCT(cheq_id)" DESC
