@@ -3,7 +3,7 @@
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` <br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)  <br>
 
-## 2. ABC-, XYZ-, RFM-анализ 
+## 2. Когортный, Retention, LTV, ABC-, XYZ-, RFM-анализ 
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` `Superset` `SQL` `Clickhouse` <br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/abc_xyz_rfm)  <br>
 
