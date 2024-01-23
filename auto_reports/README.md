@@ -4,11 +4,3 @@
 Задача: создание автоматической отчетности, поступающей в Телеграм-бот по расписанию (ежедневно) <br><br>
 Task: to create an automatic daily report from the database to the Telegram bot. <br>
 
-## AB-tests
-[IPYNB file - AB tests]() <br>
-`python` `numpy` `scipy stats` 
-
-## Tableau dashboard 
-[Tableau portfolio page]() <br> 
-`tableau`
-
