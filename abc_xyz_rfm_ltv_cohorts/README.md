@@ -29,7 +29,7 @@
 ## Sticky Factor
 `SQL` `Clickhouse` `Superset` <br><br>
 [Sticky Factor SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%20Sticky%20Factor.sql) 
-| [Sticky Factor на дашборде](https://drive.google.com/file/d/1ldNpFI-zwc05LQJFEG-eq95d81koYz-V/view?usp=drive_link) <br><br>
+| [StickyFactor-чарт](https://drive.google.com/file/d/1P4sWCA-KW-7XKQ_kl5599zgt4IWrsD0V/view?usp=drive_link) <br><br>
 
 ## Метрики рассылок
 `SQL` `Clickhouse` `Superset` <br><br>
