@@ -24,7 +24,7 @@
 ## LTV
 `SQL` `Clickhouse` `Superset` <br><br>
 [LTV SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cohorts_db/ltv.sql) 
-| [LTV чарт на дашборде](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link)<br><br>
+| [LTV-чарт](https://drive.google.com/file/d/1yGfa4xbtTKpSCLWajFtiSvCfnuH3j71q/view?usp=drive_link)<br><br>
 
 ## Sticky Factor
 `SQL` `Clickhouse` `Superset` <br><br>
