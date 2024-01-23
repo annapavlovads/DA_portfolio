@@ -30,3 +30,7 @@
 `SQL` `Clickhouse` `Superset` <br><br>
 [Sticky Factor SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%20Sticky%20Factor.sql) 
 | [Чарт Superset]() <br><br>
+
+## Метрики рассылок
+`SQL` `Clickhouse` `Superset` <br><br>
+[Отчет по E-mail-рассылкам]() | [Чарт Superset]() <br><br>
