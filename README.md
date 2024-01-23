@@ -16,10 +16,10 @@
 `Python` `Apache Airflow` `Pandas` `SQL` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/auto_reports)  <br>
 
-## Модели машинного обучения 
+## Модели машинного обучения (в работе)
 `Python`<br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/ml_models)  <br>
 
-## Прочие проекты 
+## Прочие проекты (в работе)
 `Python`<br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/other)<br>
