@@ -9,8 +9,8 @@
 
 ## 3. Дашборды
 `Clickhouse` `SQL` `Superset` `Tableau` <br><br>
-[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/dashboards)  <br>
-[Галерея дашбордов >>](https://drive.google.com/drive/folders/1H7HByxmMCak4S5QShsdYGTVvr2_rTRQN?usp=drive_link) <br>
+[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/dashboards) <br>
+[Галерея дашбордов и чартов >>](https://drive.google.com/drive/folders/1H7HByxmMCak4S5QShsdYGTVvr2_rTRQN?usp=drive_link) <br>
 
 ## 4. Автоматизация отчетности
 `Python` `Apache Airflow` `Pandas` `SQL` <br><br>
