@@ -44,7 +44,7 @@
 ## Дашборд "Клиентская база"
 `Clickhouse` `SQL` `Superset` <br><br>
 [Дашборд](https://drive.google.com/file/d/1pzoC0X92h4Cip3Y_auiIgQzUqmOhS1_7/view?usp=drive_link) | 
-[SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_request.sql) 
+[SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_sales_dashboard/request.sql) 
 | [Документация](https://www.evernote.com/shard/s436/sh/e2d56742-4afb-7d9a-78d5-e89be285ea62/NbFerp0DkhK0suZ5FDERVv39Teomq76rMMFTihpvJm03Rb_Ul2I7Lo18EQ) 
 <br><br>
 **Задача**: <br>
