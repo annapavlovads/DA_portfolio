@@ -15,9 +15,11 @@
 ## Дашборд сегментации клиентской базы
 `Clickhouse` `SQL` `Superset` <br><br>
 [Дашборд](https://drive.google.com/file/d/1uZDuMJm9s1timzMFu1VqfdxmSpkYwd0b/view?usp=drive_link) | 
+[RFM-чарт](https://drive.google.com/file/d/19gN3bHp19ePkfJJ2K1sd7dergSzEQlQO/view?usp=drive_link) |
+[RFM SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_request.sql) 
+<br>
 [Документация](https://www.evernote.com/shard/s436/sh/ac5dc1a8-46d7-3db6-5685-9216ef8d05a3/9l16bOjuZoh32fXgk_saVZDTdL185IlqMa1Ew1ZGU0OwOi2nDWDimM-oRA) | 
-[RFM SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_request.sql) |
-[RFM-структура, чарт](https://drive.google.com/file/d/19gN3bHp19ePkfJJ2K1sd7dergSzEQlQO/view?usp=drive_link)
+[Рекомендации по сегментам](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/%D0%A0%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8%20%D0%BF%D0%BE%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B5%20%D1%81%20RFM-%D1%81%D0%B5%D0%B3%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8.md)
 <br><br>
 **Задача**: <br>
 Построить дашборд программы лояльности, осуществляющий RFM-сегментацию клиентской базы с возможностью фильтрации по макросегментам и сегментам и выгрузки контактных данных  для использования в персонализированных коммуникациях. <br>
