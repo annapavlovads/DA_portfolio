@@ -23,14 +23,14 @@
 
 ## LTV
 `SQL` `Clickhouse` `Superset` <br><br>
-[LTV SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/LTV%20%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%B2%D1%81%D0%B5%D0%BC%20%D0%BA%D0%BE%D0%B3%D0%BE%D1%80%D1%82%D0%B0%D0%BC%20%D0%B7%D0%B0%20%D0%BF%D0%B5%D1%80%D0%B8%D0%BE%D0%B4.sql) 
-| [Чарт Superset]()<br><br>
+[LTV SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cohorts_db/ltv.sql) 
+| [LTV чарт на дашборде](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link)<br><br>
 
 ## Sticky Factor
 `SQL` `Clickhouse` `Superset` <br><br>
 [Sticky Factor SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%20Sticky%20Factor.sql) 
-| [Чарт Superset]() <br><br>
+| [Sticky Factor на дашборде](https://drive.google.com/file/d/1ldNpFI-zwc05LQJFEG-eq95d81koYz-V/view?usp=drive_link) <br><br>
 
 ## Метрики рассылок
 `SQL` `Clickhouse` `Superset` <br><br>
-[Отчет по E-mail-рассылкам]() | [Чарт Superset]() <br><br>
+[Метрики E-mail-рассылки]() | [Чарт Superset]() <br><br>
