@@ -28,7 +28,7 @@
 
 ## Дашборд "Когортный анализ"
 `Clickhouse` `SQL` `Superset` <br><br>
-[Дашборд]() | 
+[Дашборд](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link) | 
 [SQL]() | 
 [Документация](https://www.evernote.com/shard/s436/sh/7559a7a2-08ce-8679-5599-0e9787210494/5Nlqn974dzuO2r7xj4lCSczYKKz-zXWv2UAFcERvKoQg6aFnfZoI4z3Pew) 
 <br><br>
