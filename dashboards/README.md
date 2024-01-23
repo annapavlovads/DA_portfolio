@@ -16,7 +16,9 @@
 `Clickhouse` `SQL` `Superset` <br><br>
 [Дашборд](https://drive.google.com/file/d/1uZDuMJm9s1timzMFu1VqfdxmSpkYwd0b/view?usp=drive_link) | 
 [Документация](https://www.evernote.com/shard/s436/sh/ac5dc1a8-46d7-3db6-5685-9216ef8d05a3/9l16bOjuZoh32fXgk_saVZDTdL185IlqMa1Ew1ZGU0OwOi2nDWDimM-oRA) | 
-[RFM SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_request.sql) <br><br>
+[RFM SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_request.sql) |
+[RFM-структура, чарт](https://drive.google.com/file/d/19gN3bHp19ePkfJJ2K1sd7dergSzEQlQO/view?usp=drive_link)
+<br><br>
 **Задача**: <br>
 Построить дашборд программы лояльности, осуществляющий RFM-сегментацию клиентской базы с возможностью фильтрации по макросегментам и сегментам и выгрузки контактных данных  для использования в персонализированных коммуникациях. <br>
 
