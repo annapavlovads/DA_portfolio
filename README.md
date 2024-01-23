@@ -22,4 +22,4 @@
 
 ## Прочие проекты 
 `Python`<br><br>
-[Перейти в папку с проектами >>](https://github.com/)  <br>
+[Перейти в папку с проектами >>](https://github.com/](https://github.com/annapavlovads/DA_portfolio/tree/main/other)<br>
