@@ -5,8 +5,7 @@
 [Дашборд](https://drive.google.com/file/d/1uZDuMJm9s1timzMFu1VqfdxmSpkYwd0b/view?usp=drive_link) | 
 [RFM-чарт](https://drive.google.com/file/d/19gN3bHp19ePkfJJ2K1sd7dergSzEQlQO/view?usp=drive_link) |
 [RFM SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_request.sql) 
-| [Документация](https://www.evernote.com/shard/s436/sh/ac5dc1a8-46d7-3db6-5685-9216ef8d05a3/9l16bOjuZoh32fXgk_saVZDTdL185IlqMa1Ew1ZGU0OwOi2nDWDimM-oRA) | 
-[Рекомендации по сегментам](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_advice.md)
+| [Документация](https://www.evernote.com/shard/s436/sh/ac5dc1a8-46d7-3db6-5685-9216ef8d05a3/9l16bOjuZoh32fXgk_saVZDTdL185IlqMa1Ew1ZGU0OwOi2nDWDimM-oRA) 
 <br><br>
 **Задача**: <br>
 Построить дашборд программы лояльности, осуществляющий RFM-сегментацию клиентской базы с возможностью фильтрации по макросегментам и сегментам и выгрузки контактных данных  для использования в персонализированных коммуникациях. <br>
@@ -14,8 +13,7 @@
 **Решение**: <br>
 Дашборд построен на основе запросов, написанных к `Clickhouse`, в `Superset`. Верхние чарты отражают RFM-сегментацию с возможностью увидеть долю сегмента, а также динамику сегментов по месяцам. В нижней части дашборда доступна таблица с контактными данными, которая формируется на основе выбранных в левой верхней части фильтров по сегментам или макросегментам. Ссылка на документацию расположена в верхней части под заголовком дашборда. В документации также содержится описание сегментов и рекомендация по взаимодействию с ними. <br>
 
-**Рекомендации по взаимодействию с сегментами**<br>
-[Рекомендации по сегментам](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_advice.md)
+[Стратегия и рекомендации по взаимодействию с сегментами](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_advice.md)
 
 ## Дашборд "Когортный анализ"
 `Clickhouse` `SQL` `Superset` <br><br>
