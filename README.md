@@ -19,7 +19,7 @@
 
 ## Когортный, Retention, LTV, ABC-, XYZ-, RFM-анализ 
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` `Superset` `SQL` `Clickhouse` <br><br>
-[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/abc_xyz_rfm)  <br>
+[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/abc_xyz_rfm_ltv_cohorts)<br>
 
 ## Дашборды
 `Clickhouse` `SQL` `Superset` `Tableau` <br><br>
