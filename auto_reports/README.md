@@ -18,7 +18,7 @@
 
 ## Автоматический ежедневный ETL-пайплайн (Clickhouse)
 `Apache Airflow` `Clickhouse` `Telegram-bot` `Seaborn` `Python` `SQL`<br><br>
-[Airflow DAG Python script](https://github.com/annapavlovads/DA_portfolio/blob/main/auto_reports/ETL_pipeline_DAG.py)<br><br>
+[Airflow DAG - Python](https://github.com/annapavlovads/DA_portfolio/blob/main/auto_reports/ETL_pipeline_DAG.py)<br><br>
 **Задача**: создание автоматического ETL-пайплайна, который агрегирует данные из базы данных ClickHouse за предыдущий день.<br>
 **Решение**: создан DAG для `Apache Airflow` <br>
 **Как работает**: таск запускается ежедневно в 11 часов, агрегирует данные из базы данных `ClickHouse` и записывает их в другую базy `ClickHouse`. 
