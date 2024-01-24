@@ -1,4 +1,4 @@
-[Резюме](https://github.com/annapavlovads/DA_portfolio/blob/main/cv/cv_anna_pavlova_DA.md)
+[CV](https://github.com/annapavlovads/DA_portfolio/blob/main/cv/cv_anna_pavlova_DA.md) | [Cover Letter](https://github.com/annapavlovads/DA_portfolio/blob/main/cv/cover_letter.md)
 
 У меня есть опыт аналитики больших данных в таких сферах как:
 - автомобильный бизнес
