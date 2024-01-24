@@ -37,7 +37,9 @@
 
 ## Lifetime
 `SQL` `Clickhouse` `Superset` <br><br>
-[Lifetime.sql](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/cohorts_lifetime_sql/lifetime_days.sql) <br><br>
+[Lifetime.sql](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/cohorts_lifetime_sql/lifetime_days.sql) |
+[Lifetime - чарт](https://drive.google.com/file/d/1yIfqzxUtB88kXQVqtG85gJ8tGoULVbNR/view?usp=drive_link)
+<br><br>
 Расчет lifetime пользователей покогортно был проведен для: 
 - оценки эффективности маркетинговых кампаний, как показатель того, насколько успешно и устойчиво новые клиенты удерживаются в продукте (если lifetime увеличивается с течением времени, это может свидетельствовать о том, что маркетинговые усилия компании направлены на более качественных клиентов, что может привести к увеличению доходов).
 - планирования бюджета маркетинга: используя lifetime можно прогнозировать доход от каждой когорты и определить, сколько нужно инвестировать в удержание клиентов и привлечение новых
