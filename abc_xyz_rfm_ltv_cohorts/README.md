@@ -9,13 +9,15 @@
 ## ABC- и XYZ-анализ
 `Python` `Pandas` `Matplotlib` `Seaborn` <br><br>
 [ABC.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/ABC_pandas.ipynb) | 
-[XYZ.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/XYZ_pandas.ipynb) <br>
+[XYZ.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/XYZ_pandas.ipynb) <br><br>
 [Стратегия и рекомендации по работе с группами]()<br><br>
 
 ## Когортный анализ
 `SQL` `Clickhouse` `Superset` <br><br>
 [Когорты - количество пользователей](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cohorts_db/cohorts_clients_qty.sql) | [Когорты - средний чек](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cohorts_db/cohorts_avg_cheque.sql)
-| [Дашборд "Когортный анализ"](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link)
+| [Дашборд "Когортный анализ"](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link)<br>
+[XYZ.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/XYZ_pandas.ipynb) <br><br>
+[Выводы по дашборду]()<br><br>
 
 ## Retention Rate
 `SQL` `Clickhouse` `Superset` <br><br>
