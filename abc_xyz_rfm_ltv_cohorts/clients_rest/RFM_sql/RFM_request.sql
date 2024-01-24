@@ -1,3 +1,27 @@
+--Назначение запроса:
+--Этот SQL-запрос используется для создания сегментации на основе RFM-анализа (recency, frequency, monetary) для контактов в базе данных. 
+--Он также объединяет данные в строку и присваивает контактам макросегмент и сегмент в зависимости от их RFM-показателей.
+
+--Используемые поля:
+-- contact_id - идентификатор контакта
+-- first_name - имя контакта
+-- mobile_phone - мобильный телефон контакта
+-- email - электронная почта контакта
+-- favourite_restaurant - любимый ресторан контакта
+-- R_, F_, M_ - пороговые значения для Recency, Frequency, Monetary
+-- Recency, Frequency, Monetary - расчетные показатели на основе R_, F_, M_
+-- RFM - объединенная строка, содержащая значения Recency, Frequency, Monetary
+-- macrosegment - макросегмент контакта
+-- segment - сегмент контакта
+
+--Логика запроса:
+-- Для каждого контакта выполняется расчет показателей Recency, Frequency и Monetary на основе пороговых значений R_, F_, M_.
+-- Значения Recency, Frequency и Monetary объединяются в строку и сохраняются в поле RFM.
+-- На основе значений Recency, Frequency и Monetary вычисляются макросегмент и сегмент для каждого контакта с использованием CASE выражений.
+
+--------------------------
+
+--Присваиваем название для полученного кода сегмента, подтягиваем контактные данные для каждого контакта, получаем базовую таблицу для построения всех визуализаций в Superset
 SELECT
       contact_id,
       first_name,
@@ -27,7 +51,7 @@ SELECT
            END AS segment
 
 FROM
-       
+--Присваиваем кодировку для каждого из показателей R, F, M       
        (SELECT contact_id, 
               first_name,
               mobile_phone, 
@@ -61,6 +85,7 @@ FROM
 
               FROM
 
+--Получаем контактные данные для каждого контакта, их мы потом хотим видеть в выгрузке после фильтрации по сегментам и макросегментам
               (SELECT contact_id,
                       dictGet('dwh.d_contact', 'first_name', cityHash64(contact_id, instance_id)) AS first_name,
                       dictGet('dwh.d_contact', 'sms', cityHash64(contact_id, instance_id)) AS mobile_phone,
@@ -78,6 +103,7 @@ FROM
 
                 CROSS JOIN
 
+--Получаем квантили для каждого из показателей: R, F, M
               (SELECT
                       round(quantile(0.2)(R),0) AS R_20,
                       round(quantile(0.4)(R),0) AS R_40,
@@ -96,6 +122,7 @@ FROM
 
                FROM
 
+--Получаем данные о днях, прошедших с последнего визита (R), о количестве (F) и сумме (M) чеков для каждого контакта 
                (SELECT contact_id,
                        today() - max(toDate(dt)) AS R,
                        count (distinct cheque_id) AS F,
