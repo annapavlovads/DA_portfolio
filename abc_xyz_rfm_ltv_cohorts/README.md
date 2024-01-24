@@ -15,8 +15,7 @@
 ## Когортный анализ
 `SQL` `Clickhouse` `Superset` <br><br>
 [Когорты - количество пользователей](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cohorts_db/cohorts_clients_qty.sql) | [Когорты - средний чек](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cohorts_db/cohorts_avg_cheque.sql)
-| [Дашборд "Когортный анализ"](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link)<br>
-[XYZ.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/XYZ_pandas.ipynb) <br><br>
+| [Дашборд "Когортный анализ"](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link)<br><br>
 [Выводы по дашборду]()<br><br>
 
 ## Retention Rate
