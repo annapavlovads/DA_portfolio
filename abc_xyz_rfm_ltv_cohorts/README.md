@@ -21,7 +21,7 @@
 ## Retention Rate
 `SQL` `Clickhouse` `Superset` <br><br>
 [Retention SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20RR-N-days.sql) 
-| [Чарт Superset]()<br><br> 
+| [Чарт Superset]()<br>
 Расчет `Retention Rate` пользователей покогортно в днях был сделан для того, чтобы:
 - оценить эффективность удержания клиентов (высокий `RR` свидетельствует о том, что клиенты возвращаются для повторных покупок, что может быть основой для увеличения прибыли)
 - мониторинга эффективности рекламных кампаний (если `RR` оказывается низким в определенных когортах, это может указывать на проблемы с качеством лидов в этой когорте) 
@@ -36,7 +36,7 @@
 `SQL` `Clickhouse` `Superset` <br><br>
 [Lifetime.sql](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/cohorts_lifetime_sql/lifetime_days.sql) |
 [Чарт Superset](https://drive.google.com/file/d/1yIfqzxUtB88kXQVqtG85gJ8tGoULVbNR/view?usp=drive_link)
-<br><br>
+<br>
 Расчет `lifetime` пользователей покогортно был проведен для: 
 - оценки эффективности маркетинговых кампаний, как показатель того, насколько успешно и устойчиво новые клиенты удерживаются в продукте (если `lifetime` увеличивается с течением времени, это может свидетельствовать о том, что маркетинговые усилия компании направлены на более качественных клиентов, что может привести к увеличению доходов).
 - планирования бюджета маркетинга: используя `ifetime` можно прогнозировать доход от каждой когорты и определить, сколько нужно инвестировать в удержание клиентов и привлечение новых
@@ -44,8 +44,7 @@
 
 ## Sticky Factor
 `SQL` `Clickhouse` `Superset` <br><br>
-[Sticky Factor SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%20Sticky%20Factor.sql) 
-| [StickyFactor-чарт](https://drive.google.com/file/d/1P4sWCA-KW-7XKQ_kl5599zgt4IWrsD0V/view?usp=drive_link) <br><br>
+[Sticky Factor - SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%20Sticky%20Factor.sql) | [StickyFactor - чарт](https://drive.google.com/file/d/1P4sWCA-KW-7XKQ_kl5599zgt4IWrsD0V/view?usp=drive_link) <br>
 
 Расчет `Sticky Factor` для пользователей покогортно проводился для построения чарта на дашборде об активности клиентской базы, он помогает понять:
 - уровень вовлеченности пользователей в продукт: насколько активно и регулярно клиенты используют продукт (совершают заказы). Высокий (в отношении "принятого" исторически или по отрасли) `Sticky Factor` указывает высокую лояльность и удовлетворенность продуктом. Низкий `Sticky Factor`, напротив, может указывать на проблемы с удержанием клиентов и потенциальные возможности для улучшения уровня вовлеченности.
