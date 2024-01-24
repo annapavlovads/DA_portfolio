@@ -1,5 +1,7 @@
-## RFM-сегментация
+## RFM-анализ
 `SQL` `Clickhouse` `Superset` `Python` `Pandas` `Seaborn` `Matplotlib` `Numpy` <br><br>
+`RFM-анализ` был проведен для сегментации клиентов на основе их поведения. Такой анализ позволяет построить более персонализированное взаимодействие с клиентами, увидеть структуру клиентской базы и, предпринимая усилия по повышению "статуса" клиента в сегментах, увеличить прибыльность бизнеса. <br>
+ 
 [RFM.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_pandas/RFM_pandas.ipynb)<br><br>
 [RFM SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_request.sql) | 
 [Чарт Superset](https://drive.google.com/file/d/19gN3bHp19ePkfJJ2K1sd7dergSzEQlQO/view?usp=drive_link) | 
