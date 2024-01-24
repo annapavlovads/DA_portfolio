@@ -44,7 +44,7 @@
 ## Дашборд "Клиентская база"
 `Clickhouse` `SQL` `Superset` <br><br>
 [Дашборд](https://drive.google.com/file/d/1pzoC0X92h4Cip3Y_auiIgQzUqmOhS1_7/view?usp=drive_link) | 
-[SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%20%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B2%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D1%8B.sql)
+[SQL для чарта Динамика клиентской базы](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%20%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B2%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D1%8B.sql)
 | [Документация](https://www.evernote.com/shard/s436/sh/e2d56742-4afb-7d9a-78d5-e89be285ea62/NbFerp0DkhK0suZ5FDERVv39Teomq76rMMFTihpvJm03Rb_Ul2I7Lo18EQ) 
 <br><br>
 **Задача**: <br>
