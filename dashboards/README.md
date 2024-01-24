@@ -45,7 +45,8 @@
 `Clickhouse` `SQL` `Superset` <br><br>
 [Дашборд]() | 
 [SQL-запрос]() | 
-[Документация]() 
+[Документация]() <br>
+[CR push - чарт](https://drive.google.com/file/d/1ehGgpiUg9jU_vZbNNQ3TQO8HdB0P5sb7/view?usp=drive_link)
 <br><br>
 **Задача**: <br>
 Построить дашборд с метриками рассылок для менеджера по рекламе. <br>
