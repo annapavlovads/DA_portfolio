@@ -32,6 +32,16 @@
 [LTV SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cohorts_db/ltv.sql) 
 | [LTV-чарт](https://drive.google.com/file/d/1yGfa4xbtTKpSCLWajFtiSvCfnuH3j71q/view?usp=drive_link)<br><br>
 
+## Lifetime
+`SQL` `Clickhouse` `Superset` <br><br>
+[Lifetime.sql](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/cohorts_lifetime_sql/lifetime_days.sql) |
+[Чарт Superset](https://drive.google.com/file/d/1yIfqzxUtB88kXQVqtG85gJ8tGoULVbNR/view?usp=drive_link)
+<br><br>
+Расчет `lifetime` пользователей покогортно был проведен для: 
+- оценки эффективности маркетинговых кампаний, как показатель того, насколько успешно и устойчиво новые клиенты удерживаются в продукте (если `lifetime` увеличивается с течением времени, это может свидетельствовать о том, что маркетинговые усилия компании направлены на более качественных клиентов, что может привести к увеличению доходов).
+- планирования бюджета маркетинга: используя `ifetime` можно прогнозировать доход от каждой когорты и определить, сколько нужно инвестировать в удержание клиентов и привлечение новых
+- выявления факторов, влияющих на удержание клиентов (например, если `lifetime` внезапно сокращается в какой-то когорте, необходимо провести дополнительный анализ, чтобы выявить причины и приступить к их устранению) <br>
+
 ## Sticky Factor
 `SQL` `Clickhouse` `Superset` <br><br>
 [Sticky Factor SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%94%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D0%BA%D0%B0%20Sticky%20Factor.sql) 
@@ -45,12 +55,3 @@
 `SQL` `Clickhouse` `Superset` <br><br>
 [Метрики E-mail-рассылки]() | [Чарт Superset]() <br><br>
 
-## Lifetime
-`SQL` `Clickhouse` `Superset` <br><br>
-[Lifetime.sql](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/cohorts_lifetime_sql/lifetime_days.sql) |
-[Чарт Superset](https://drive.google.com/file/d/1yIfqzxUtB88kXQVqtG85gJ8tGoULVbNR/view?usp=drive_link)
-<br><br>
-Расчет `lifetime` пользователей покогортно был проведен для: 
-- оценки эффективности маркетинговых кампаний, как показатель того, насколько успешно и устойчиво новые клиенты удерживаются в продукте (если `lifetime` увеличивается с течением времени, это может свидетельствовать о том, что маркетинговые усилия компании направлены на более качественных клиентов, что может привести к увеличению доходов).
-- планирования бюджета маркетинга: используя `ifetime` можно прогнозировать доход от каждой когорты и определить, сколько нужно инвестировать в удержание клиентов и привлечение новых
-- выявления факторов, влияющих на удержание клиентов (например, если `lifetime` внезапно сокращается в какой-то когорте, необходимо провести дополнительный анализ, чтобы выявить причины и приступить к их устранению) <br>
