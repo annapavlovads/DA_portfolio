@@ -21,7 +21,7 @@
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/dashboards) <br>
 [Галерея дашбордов и чартов >>](https://drive.google.com/drive/folders/1H7HByxmMCak4S5QShsdYGTVvr2_rTRQN?usp=drive_link) <br>
 
-## Исследовательский анализ данных 
+## Исследовательский анализ данных (в работе)
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)  <br>
 
