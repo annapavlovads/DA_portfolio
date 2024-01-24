@@ -6,13 +6,11 @@
 [Пример выгрузки RFM.xlsx](https://github.com/annapavlovads/DA_portfolio/raw/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/sample_rfm_request.xlsx)<br><br>
 [Стратегия и рекомендации по работе с сегментами](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/RFM_sql/RFM_advice.md)
 
-## ABC-анализ
+## ABC- и XYZ-анализ
 `Python` `Pandas` `Matplotlib` `Seaborn` <br><br>
-[ABC.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/ABC_pandas.ipynb)<br><br>
-
-## XYZ-анализ
-`Python` `Pandas` `Matplotlib` `Seaborn` <br><br>
-[XYZ.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/XYZ_pandas.ipynb)
+[ABC.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/ABC_pandas.ipynb) | 
+[XYZ.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/XYZ_pandas.ipynb) <br>
+[Стратегия и рекомендации по работе с группами]()<br><br>
 
 ## Когортный анализ
 `SQL` `Clickhouse` `Superset` <br><br>
