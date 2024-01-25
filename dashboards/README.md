@@ -65,9 +65,10 @@
 
 ## Дашборд "Коммуникации: e-mail, sms, push"
 `Clickhouse` `SQL` `Superset` <br><br>
-[Дашборд]() | 
-[SQL-запрос]() | 
-[Документация]() <br>
+[!! ДОБАВИТЬ!! Дашборд]() | 
+[CR (push) SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cr_metrics/CR_push_campaign.sql) | 
+[!! ДОБАВИТЬ Метрики E-mail SQL]() | 
+[!! ДОБАВИТЬ!! Документация]() <br>
 [CR push - чарт](https://drive.google.com/file/d/1ehGgpiUg9jU_vZbNNQ3TQO8HdB0P5sb7/view?usp=drive_link)
 <br><br>
 **Задача**: <br>
