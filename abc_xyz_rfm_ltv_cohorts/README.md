@@ -16,8 +16,7 @@
 
 ## Когортный анализ
 `SQL` `Clickhouse` `Superset` <br><br>
-[Дашборд "Когортный анализ"](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link)<br><br>
-
+[Дашборд "Когортный анализ"](https://drive.google.com/file/d/1dRhG_0Fvu3KK26tUaAO3wwXrvdwB_pNO/view?usp=drive_link)<br>
 Когортный анализ отлично показывает окупаемость маркетинговых инвестиций, а также насколько маркетинговая стратегия вообще работает. И то, и другое очень важно для бизнеса. <br>
 
 Примеры вопросов, на которые отвечает чарт активности пользователей и RR:
