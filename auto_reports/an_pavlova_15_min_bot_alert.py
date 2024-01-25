@@ -37,27 +37,27 @@ default_args = {
 schedule_interval = timedelta(minutes=15)
         
 connection = {
-    'host': 'https://clickhouse.lab.karpov.courses',
-    'password': 'dpo_python_2020', 
-    'user': 'student', 
-    'database': 'simulator_20230720'
+    'host': 'https://clickhouse.mnz',
+    'password': PSSWD1, 
+    'user': USER1, 
+    'database': 'dwh'
 }
 
-CHAT_ID = 278936023
-MY_BOT_TOKEN = '6504583850:AAEQYH3Jl_LMZzwOpWK4QsRWCAqTNrpFLvE'
+CHAT_ID = MY_CHAT_ID
+MY_BOT_TOKEN = BOT_TOCKEN
 bot = telegram.Bot(token=MY_BOT_TOKEN)
 
 tg_responsible_user = '@AnnaPavlovaDS'
         
 chart_links = {
-    'ctr': 'http://superset.lab.karpov.courses/r/4265', 
-    'users_feed': 'http://superset.lab.karpov.courses/r/4273', 
-    'likes_feed': 'http://superset.lab.karpov.courses/r/4269', 
-    'views_feed': 'http://superset.lab.karpov.courses/r/4271', 
-    'users_messenger': 'http://superset.lab.karpov.courses/r/4279', 
-    'messages':'http://superset.lab.karpov.courses/r/4281'}
+    'ctr': 'http://superset.mnz/r/4265', 
+    'users_feed': 'http://superset.mnz/r/4273', 
+    'likes_feed': 'http://superset.mnz/r/4269', 
+    'views_feed': 'http://superset.mnz/r/4271', 
+    'users_messenger': 'http://superset.mnz/r/4279', 
+    'messages':'http://superset.mnz/r/4281'}
         
-dashboard_link = 'http://superset.lab.karpov.courses/r/4319'
+dashboard_link = 'http://superset.mnz/r/4319'
         
 
 @dag(default_args=default_args, catchup=False, schedule_interval=schedule_interval)
@@ -102,7 +102,7 @@ def an_pavlova_15_min_bot_alert():
         countIf(action='view') as views_feed, 
         countIf(action='like') as likes_feed, 
         countIf(action='like')/countIf(action='view') as ctr
-        from simulator_20230720.feed_actions
+        from dwh.feed_actions
         where time >= today() - 1 and time < toStartOfFifteenMinutes(now())
         group by time_chunk, day, hours_minutes) f
         inner join
@@ -111,7 +111,7 @@ def an_pavlova_15_min_bot_alert():
         formatDateTime(toStartOfFifteenMinutes(time), '%R') as hours_minutes, 
         uniqExact(user_id) as users_messenger,  
         count(user_id) as messages 
-        from simulator_20230720.message_actions
+        from dwh.message_actions
         where time >= today() - 1 and time < toStartOfFifteenMinutes(now())
         group by time_chunk, day, hours_minutes
         ) m
