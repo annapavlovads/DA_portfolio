@@ -30,14 +30,14 @@
 `Python` `Apache Airflow` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/auto_reports)  <br>
 
-## Исследовательский анализ данных (в работе)
+## Исследовательский анализ данных 
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)  <br>
 
-## Модели машинного обучения (в работе)
+## Machine Learning
 `Python`<br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/ml_models)  <br>
 
-## Прочие проекты (в работе)
+## Другие проекты 
 `Python`<br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/other)<br>
