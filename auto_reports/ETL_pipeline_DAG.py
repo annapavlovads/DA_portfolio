@@ -47,16 +47,16 @@ default_args = {
 schedule_interval = '0 11 * * *'
 
 connection = {
-    'host': 'https://clickhouse.lab.karpov.courses', 
-    'password': 'dpo_python_2020', 
-    'user': 'student', 
-    'database': 'simulator_20230720'}
+    'host': 'https://clickhouse.mnz', 
+    'password': PWSSWD1, 
+    'user': USER1, 
+    'database': 'dwh'}
 
 connection_test = {
-    'host': 'https://clickhouse.lab.karpov.courses', 
-    'password': '656e2b0c9c', 
-    'user': 'student-rw', 
-    'database': 'test'}
+    'host': 'https://clickhouse.mnz', 
+    'password': PWSSWD2, 
+    'user': USER2, 
+    'database': 'test_dwh'}
 
 
 @dag(default_args=default_args, catchup=False, schedule_interval=schedule_interval)
@@ -73,7 +73,7 @@ def ETL_pipeline_DAG():
             os, 
             countIf(action='view') as views, 
             countIf(action='like') as likes
-            from simulator_20230720.feed_actions
+            from dwh.feed_actions
             where toDate(time)=today()-1
             group by event_date, user, gender, age, os
             """
@@ -91,15 +91,16 @@ def ETL_pipeline_DAG():
                 user_id as user, 
                 count() as messages_sent, 
                 uniq(reciever_id) as users_sent
-                from simulator_20230720.message_actions
+                from dwh.message_actions
                 where toDate(time)=today()-1
                 group by event_date, user
                 )
                 as s
                 full outer join 
                 (
-                select toDate(time) as event_date, reciever_id as user, count() as messages_received, uniq(user_id) as users_received
-                from simulator_20230720.message_actions
+                select toDate(time) as event_date, reciever_id as user, count() as messages_received, 
+                uniq(user_id) as users_received
+                from dwh.message_actions
                 where toDate(time)=today()-1
                 group by event_date, user
                 ) as r 
@@ -164,7 +165,7 @@ def ETL_pipeline_DAG():
     @task
     def load_table(final_df): 
         #q_load = """
-        #CREATE TABLE test.an_pavlova_etl
+        #CREATE TABLE test_dwh.an_pavlova_etl
         #(
         #event_date Date, 
         #dimension String, 
@@ -180,11 +181,7 @@ def ETL_pipeline_DAG():
         #ORDER BY event_date
         #"""
         
-        connection_test = {
-            'host': 'https://clickhouse.lab.karpov.courses', 
-            'password': '656e2b0c9c', 
-            'user': 'student-rw', 
-            'database': 'test'}
+        connection_test = connection_test
         
         #pandahouse.execute(q_load, connection=connection_test)
         
