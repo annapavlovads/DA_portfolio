@@ -27,7 +27,7 @@
 ## Retention Rate
 `SQL` `Clickhouse` `Superset` <br><br>
 [Retention SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_kpi/%D0%A1%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D0%B9%20RR-N-days.sql) 
-| [Чарт Superset]()<br>
+| [Чарт Superset](https://drive.google.com/file/d/1ZIJYwojLrJBau7F94nrOYqO_GILulwRO/view?usp=drive_link)<br>
  
 Расчет `Retention Rate` пользователей покогортно в днях был сделан для того, чтобы:
 - оценить эффективность удержания клиентов (высокий `RR` свидетельствует о том, что клиенты возвращаются для повторных покупок, что может быть основой для увеличения прибыли)
@@ -37,8 +37,8 @@
 ## LTV
 `SQL` `Clickhouse` `Superset` <br><br>
 [LTV SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cohorts_db/ltv.sql) 
-| [LTV-чарт](https://drive.google.com/file/d/1yGfa4xbtTKpSCLWajFtiSvCfnuH3j71q/view?usp=drive_link)<br><br>
-
+| [LTV-чарт](https://drive.google.com/file/d/1yGfa4xbtTKpSCLWajFtiSvCfnuH3j71q/view?usp=drive_link)<br>
+ 
 Когортный анализ (чарт `LTV`) позволяет ответить на вопросы:
 - сколько денег за все время принесли пользователи, совершившие первый заказ в феврале?
 - сколько денег за первые полгода принесли пользователи, совершившие первый заказ в марте?
@@ -47,8 +47,7 @@
 ## Lifetime
 `SQL` `Clickhouse` `Superset` <br><br>
 [Lifetime.sql](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm_ltv_cohorts/clients_rest/cohorts_lifetime_sql/lifetime_days.sql) |
-[Чарт Superset](https://drive.google.com/file/d/1yIfqzxUtB88kXQVqtG85gJ8tGoULVbNR/view?usp=drive_link)
-<br>
+[Чарт Superset](https://drive.google.com/file/d/1yIfqzxUtB88kXQVqtG85gJ8tGoULVbNR/view?usp=drive_link)<br>
  
 Расчет `lifetime` пользователей покогортно был проведен для: 
 - оценки эффективности маркетинговых кампаний, как показатель того, насколько успешно и устойчиво новые клиенты удерживаются в продукте (если `lifetime` увеличивается с течением времени, это может свидетельствовать о том, что маркетинговые усилия компании направлены на более качественных клиентов, что может привести к увеличению доходов).
