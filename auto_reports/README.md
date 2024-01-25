@@ -1,6 +1,8 @@
 ## Ежедневный автоматический отчет в Телеграм-бот 
 `Apache Airflow` `Clickhouse` `Telegram-bot` `Seaborn` `Python` `SQL`<br><br>
-[Airflow DAG - Python](https://github.com/annapavlovads/DA_portfolio/blob/main/auto_reports/dag_an_pavlova_report_full.py)<br><br>
+[Airflow DAG - Python](https://github.com/annapavlovads/DA_portfolio/blob/main/auto_reports/dag_an_pavlova_report_full.py) | 
+[Report Bot Screenshot](https://drive.google.com/file/d/13M85Tux8Xcmp5YY7J_3J7CViG9Xufk2A/view?usp=drive_link) | 
+[Report Chart](https://drive.google.com/file/d/1m1JL2zB2fygaBXNG_Eh5xJB3rTmiuJOR/view?usp=drive_link)<br><br>
 **Задача**: создание автоматической отчетности, поступающей в Телеграм-бот по расписанию (ежедневно) <br>
 **Решение**: создан DAG для `Apache Airflow` <br>
 **Как работает**: Создается отчетность по данным с сайта, используя информацию из базы данных `ClickHouse` (активность пользователей, сообщения, лайки и просмотры). 
