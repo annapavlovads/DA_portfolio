@@ -21,12 +21,12 @@
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` `Superset` `SQL` `Clickhouse` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/abc_xyz_rfm_ltv_cohorts)<br>
 
-## Дашборды
+## Дашборды для маркетологов и менеджера программы лояльности
 `Clickhouse` `SQL` `Superset` `Tableau` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/dashboards) <br>
 [Галерея дашбордов и чартов >>](https://drive.google.com/drive/folders/1H7HByxmMCak4S5QShsdYGTVvr2_rTRQN?usp=drive_link) <br>
 
-## Автоматизация отчетности
+## Автоматизация отчетности по мобильному приложению
 `Python` `Apache Airflow` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/auto_reports)  <br>
 
