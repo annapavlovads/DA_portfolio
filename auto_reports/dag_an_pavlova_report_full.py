@@ -56,10 +56,10 @@ schedule_interval = '0 11 * * *'
 def dag_an_pavlova_report_full():
 
     connection = {
-        'host': 'https://clickhouse.lab.karpov.courses', 
-        'password': 'dpo_python_2020', 
-        'user': 'student', 
-        'database': 'simulator_20230720'}
+        'host': 'https://clickhouse.mnz', 
+        'password': PSSWD1, 
+        'user': USER1, 
+        'database': 'dwh'}
         
         
     q_df = """
@@ -71,7 +71,7 @@ def dag_an_pavlova_report_full():
         countIf(user_id, action='like') as likes, 
         countIf(user_id, action='view') as views, 
         100 * likes/views as ctr
-        from simulator_20230720.feed_actions
+        from dwh.feed_actions
         where toDate(time) between today()-10 and today()-1
         group by date, os, source
         order by date DESC
@@ -84,7 +84,7 @@ def dag_an_pavlova_report_full():
         uniqExact (user_id) as users, 
         count(*) as messages, 
         messages/users as mess_per_user
-        from simulator_20230720.message_actions
+        from dwh.message_actions
         where toDate(time) between today()-10 and today()-1
         group by date
         order by date DESC
@@ -103,13 +103,13 @@ def dag_an_pavlova_report_full():
         select distinct toDate(time) as date, 
         user_id as user_id, 
         os as os
-        from simulator_20230720.feed_actions 
+        from dwh.feed_actions 
         where toDate(time) between today()-10 and today()-1
         union all
         select distinct toDate(time) as date, 
         user_id as user_id, 
         os as os
-        from simulator_20230720.message_actions
+        from dwh.message_actions
         where toDate(time) between today()-10 and today()-1
         ) as temporary_table
         group by date
@@ -134,14 +134,14 @@ def dag_an_pavlova_report_full():
         user_id as user_id, 
         source as source, 
         min(toDate(time)) as start_date
-        from simulator_20230720.feed_actions 
+        from dwh.feed_actions 
         where toDate(time) between today()-100 and today()-1
         group by user_id, source
         union all
         select user_id as user_id, 
         source as source, 
         min(toDate(time)) as start_date
-        from simulator_20230720.message_actions
+        from dwh.message_actions
         where toDate(time) between today()-100 and today()-1
         group by user_id, source) as temporary_table
         group by user_id, source) as temp_table
@@ -346,8 +346,8 @@ def dag_an_pavlova_report_full():
     
     @task()
     def report_to_bot(text, plot_object):
-        chat_id = -927780322   
-        my_bot_token = '6504583850:AAEQYH3Jl_LMZzwOpWK4QsRWCAqTNrpFLvE'
+        chat_id = MY_CHAT_ID  
+        my_bot_token = BOT_TOCKEN
         bot = telegram.Bot(token=my_bot_token)
         bot.sendMessage(chat_id=chat_id, text=text)
         bot.sendPhoto(chat_id=chat_id, photo=plot_object)     
