@@ -12,7 +12,7 @@
 `Python` `Pandas` `Matplotlib` `Seaborn` <br><br>
 [ABC.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/ABC_pandas.ipynb) | 
 [XYZ.ipynb](https://github.com/annapavlovads/DA_portfolio/blob/main/abc_xyz_rfm/goods_rest/XYZ_pandas.ipynb) <br><br>
-[Стратегия и рекомендации по работе с группами]()<br><br>
+[!!! ДОБАВИТЬ !!! Стратегия и рекомендации по работе с группами](https://github.com)<br><br>
 
 ## Когортный анализ
 `SQL` `Clickhouse` `Superset` <br><br>
