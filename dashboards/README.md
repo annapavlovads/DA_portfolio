@@ -70,15 +70,12 @@
 [CR push SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cr_metrics/CR_push_campaign.sql) | 
 [CR push чарт](https://drive.google.com/file/d/1ehGgpiUg9jU_vZbNNQ3TQO8HdB0P5sb7/view?usp=drive_link) | 
 [CR E-mail SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cr_metrics/email_metrics.sql) |
-[CR SMS SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cr_metrics/sms_metrics.sql) | 
-
-<br><br>
+[CR SMS SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cr_metrics/sms_metrics.sql) <br><br>
 **Задача**: <br>
 Построить дашборд с метриками рассылок для менеджера по рекламе и CRM-менеджера. <br>
 
 **Решение**: <br>
 Дашборд построен на основе запросов, написанных к `Clickhouse`, в `Superset`. Рассылки поделены на три блока: sms, email, push в мобильном приложении. Ссылка на документацию расположена в верхней части под заголовком дашборда. <br>
-
 
 ## Дашборд "Клиентская база"
 `Clickhouse` `SQL` `Superset` <br><br>
