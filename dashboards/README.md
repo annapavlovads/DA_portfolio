@@ -65,10 +65,10 @@
 
 ## Дашборд "Коммуникации: e-mail, sms, push"
 `Clickhouse` `SQL` `Superset` <br><br>
-[!! ДОБАВИТЬ!! Дашборд]() | 
+[Дашборд]() | 
 [CR (push) SQL](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/pl_cr_metrics/CR_push_campaign.sql) | 
-[!! ДОБАВИТЬ Метрики E-mail SQL]() | 
-[!! ДОБАВИТЬ!! Документация]() <br>
+[Метрики E-mail SQL]() | 
+[Документация](https://www.evernote.com/shard/s436/client/snv?isnewsnv=true&noteGuid=c6eb72cb-f74d-b001-f8eb-fa71210b11f3&noteKey=asXpGePGu8hbvxfKUh_L0ZW8a9IQ_VRGG5wRKx18oaG_JKHSX7NMlAYoSw&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs436%2Fsh%2Fc6eb72cb-f74d-b001-f8eb-fa71210b11f3%2FasXpGePGu8hbvxfKUh_L0ZW8a9IQ_VRGG5wRKx18oaG_JKHSX7NMlAYoSw&title=%25D0%2594%25D0%25B0%25D1%2588%25D0%25B1%25D0%25BE%25D1%2580%25D0%25B4%2B%2522%25D0%259A%25D0%25BE%25D0%25BC%25D0%25BC%25D1%2583%25D0%25BD%25D0%25B8%25D0%25BA%25D0%25B0%25D1%2586%25D0%25B8%25D0%25B8%253A%2B%25D0%25B2%25D1%2581%25D0%25B5%2B%25D0%25BA%25D0%25BE%25D0%25BC%25D0%25BC%25D1%2583%25D0%25BD%25D0%25B8%25D0%25BA%25D0%25B0%25D1%2586%25D0%25B8%25D0%25B8%2B%2528sms%252C%2Be-mail%252C%2Bpush%2529) <br>
 [CR push - чарт](https://drive.google.com/file/d/1ehGgpiUg9jU_vZbNNQ3TQO8HdB0P5sb7/view?usp=drive_link)
 <br><br>
 **Задача**: <br>
