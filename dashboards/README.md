@@ -100,6 +100,5 @@
 Необходимо подсчитать, сколько сообщений отправляется по клиентской базе каждого из ресторанов на основании информации о том, что клиент должен относиться к тому ресторану, который он наиболее часто посещает. 
 
 **Решение**: <br>
-Написан запрос, формирующий таблицу для выгрузки. <br>
-[Запрос](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/sql_requests/request_most_frequent_visited_shop.sql)
+[Запрос, формирующий таблицу для выгрузки](https://github.com/annapavlovads/DA_portfolio/blob/main/dashboards/sql_requests/request_most_frequent_visited_shop.sql)
 
