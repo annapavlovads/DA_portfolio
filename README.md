@@ -21,5 +21,5 @@
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)  <br>
 
 ## Machine Learning
-`Python`<br><br>
+`DVC` `MLflow` `Docker` `Apache Airflow` `Python` `Pandas` `SQL` `Scikit-learn` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/ml_models)  <br>
