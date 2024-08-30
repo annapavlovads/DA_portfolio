@@ -24,3 +24,7 @@
 ## Machine Learning
 `DVC` `MLflow` `Docker` `Apache Airflow` `Python` `Pandas` `SQL` `Scikit-learn` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/ml_models)  <br>
+
+## Веб-приложение
+`Python` `Flask` `Postgresql` `SQLAlchemy` `Docker` `HTML` `CSS` `Pandas` `SQL` <br><br>
+[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/calendar_web)  <br>
