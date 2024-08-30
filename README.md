@@ -4,10 +4,6 @@
 *Все задачи, приведенные в портфолио, были реализованы мной в бизнес-практике.*
 <br> 
 
-## ABC-, XYZ-, RFM-, Retention, LTV, когортный анализ 
-`Python` `Pandas` `SQL` `Seaborn` `Matplotlib` `Superset` `SQL` `Clickhouse` <br><br>
-[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/abc_xyz_rfm_ltv_cohorts)<br>
-
 ## Дашборды для маркетологов и менеджеров
 `Clickhouse` `SQL` `Superset` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/dashboards) <br>
@@ -17,10 +13,6 @@
 `Python` `Apache Airflow` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/auto_reports)  <br>
 
-## Исследовательский анализ данных: мобильное приложение, клиентская база, продажи
-`Python` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
-[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)  <br>
-
 ## Machine Learning
 `DVC` `MLflow` `Docker` `Apache Airflow` `Python` `Pandas` `SQL` `Scikit-learn` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/ml_models)  <br>
@@ -28,3 +20,11 @@
 ## Веб-приложение `Event-календарь`
 `Python` `Flask` `Postgresql` `SQLAlchemy` `Docker` `HTML` `CSS` `JavaScript` <br><br>
 [Перейти в папку с проектом >>](https://github.com/annapavlovads/DA_portfolio/tree/main/calendar_web)  <br>
+
+## ABC-, XYZ-, RFM-, Retention, LTV, когортный анализ 
+`Python` `Pandas` `SQL` `Seaborn` `Matplotlib` `Superset` `SQL` `Clickhouse` <br><br>
+[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/abc_xyz_rfm_ltv_cohorts)<br>
+
+## Исследовательский анализ данных: мобильное приложение, клиентская база, продажи
+`Python` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
+[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)  <br>
