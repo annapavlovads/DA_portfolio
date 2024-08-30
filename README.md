@@ -13,7 +13,7 @@
 `Python` `Apache Airflow` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/auto_reports)  <br>
 
-## Machine Learning
+## Проекты `Machine Learning`
 `DVC` `MLflow` `Docker` `Apache Airflow` `Python` `Pandas` `SQL` `Scikit-learn` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/ml_models)  <br>
 
