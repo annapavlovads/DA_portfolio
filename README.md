@@ -4,11 +4,6 @@
 *Все задачи, приведенные в портфолио, были реализованы мной в бизнес-практике.*
 <br> 
 
-## Дашборды для маркетологов и менеджеров
-`Clickhouse` `SQL` `Superset` <br><br>
-[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/dashboards) <br>
-[Галерея дашбордов и чартов >>](https://drive.google.com/drive/folders/1H7HByxmMCak4S5QShsdYGTVvr2_rTRQN?usp=drive_link) <br>
-
 ## Автоматизация отчетности - развертывание BI-системы
 `Python` `Apache Airflow` `Clickhouse` `SQL` `Apache Superset` `Pandas` `SQL` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/auto_reports)  <br>
@@ -20,6 +15,11 @@
 ## Веб-приложение `Event-календарь`
 `Python` `Flask` `Postgresql` `SQLAlchemy` `Docker` `HTML` `CSS` `JavaScript` <br><br>
 [Перейти в папку с проектом >>](https://github.com/annapavlovads/DA_portfolio/tree/main/calendar_web)  <br>
+
+## Дашборды для маркетологов и менеджеров
+`Clickhouse` `SQL` `Superset` <br><br>
+[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/dashboards) <br>
+[Галерея дашбордов и чартов >>](https://drive.google.com/drive/folders/1H7HByxmMCak4S5QShsdYGTVvr2_rTRQN?usp=drive_link) <br>
 
 ## ABC-, XYZ-, RFM-, Retention, LTV, когортный анализ 
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` `Superset` `SQL` `Clickhouse` <br><br>
