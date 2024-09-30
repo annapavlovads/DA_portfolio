@@ -10,7 +10,7 @@
 [Галерея дашбордов и чартов >>](https://drive.google.com/drive/folders/1H7HByxmMCak4S5QShsdYGTVvr2_rTRQN?usp=drive_link) <br>
 
 ## Автоматизация отчетности
-`Python` `Apache Airflow` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
+`Python` `Apache Airflow` `Clickhouse` `SQL` `Apache Superset` `Pandas` `SQL` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/auto_reports)  <br>
 
 ## Проекты `Machine Learning`
