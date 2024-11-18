@@ -27,7 +27,7 @@
 2. Создать среду, установить зависимости из `requirements.txt`
 3. Запустить контейнер с `PostgreSL`: 
 ```bash
-docker run -d -p 5432:5432 -v /database/ps_files:/var/lib/postgresql/data --name postgresql-container -e POSTGRES_PASSWORD=calendaradmin116 postgres:13
+docker run -d -p 5432:5432 -v /database/ps_files:/var/lib/postgresql/data --name postgresql-container -e POSTGRES_PASSWORD=passwd postgres:13
 ```
 4. Подключиться к `PostgreSQL`, создать пользователя, базу, таблицы (файл `ddl.sql`)
 5. Проверяем открытые порты, при необходимости добавляем. 
@@ -65,5 +65,5 @@ flask run --host=0.0.0.0 --port=5000
    - `Пользовательская инструкция`
 
 #### Скриншоты 
-
+[Main Page](https://drive.google.com/file/d/121y-yIZS0_QzLPlb_4ArFgP-uCqnAZhD/view?usp=drive_link)
 
