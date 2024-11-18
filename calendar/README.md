@@ -65,5 +65,12 @@ flask run --host=0.0.0.0 --port=5000
    - `Пользовательская инструкция`
 
 #### Скриншоты 
-[Main Page](https://drive.google.com/file/d/121y-yIZS0_QzLPlb_4ArFgP-uCqnAZhD/view?usp=drive_link)
+[Страница входа](https://drive.google.com/file/d/1OraBixYzT61Fp-BUcZU8br6OGzhWYkOR/view?usp=drive_link) 
+[Главная страница](https://drive.google.com/file/d/121y-yIZS0_QzLPlb_4ArFgP-uCqnAZhD/view?usp=drive_link) 
+[Найдено быстрым поиском] (https://drive.google.com/file/d/1HKYU8EusT5dshtzW6eiamhBS95j7pqea/view?usp=drive_link) 
+[Поиск](https://drive.google.com/file/d/14hwrygHrnBkBdkWHSBhq9zAa7GYOroaI/view?usp=sharing) <br>
+[Добавить событие](https://drive.google.com/file/d/1XIcNRp4jQ_9BS5zp570gbkziRY0_So0F/view?usp=drive_link)
+[Месяц](https://drive.google.com/file/d/1QX9Ah4ijQpn9j3DTMbj72Bey0Z8119pW/view?usp=drive_link) 
+[Неделя](https://drive.google.com/file/d/1SySYUyuyBvYqNS0xI1dlVzX1i5qN-CTR/view?usp=sharing)
+[Событие](https://drive.google.com/file/d/1xIrpzBLLO69aG-BGGOy-4lVth0jOo7cA/view?usp=drive_link) 
 
