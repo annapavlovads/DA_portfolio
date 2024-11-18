@@ -1,4 +1,4 @@
-## Маркетинговый событийный календарь
+## Маркетинговый событийный календарь | `Event`-календарь
 
 `Python` `Flask` `PostgreSQL` `SQLAlchemy` `Jinja` `HTML` `CSS`
 
