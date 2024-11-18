@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Ничего не найдено}{%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h1>Ничего не найдено!</h1>
+      <div class="col-12 col-lg-7 my-5">
+
+        <p>
+          Попробуйте <a href="{{ url_for ('search_view') }}">изменить параметры поиска</a>
+        </p>
+        <p>
+          <a href="https://t.me/mks_mir_bot" target="_blank">или спросите у искусственного интеллекта</a>
+        </p>
+      </div>
+      <div class="col-12 col-lg-5">
+        <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename='img/404.png') }}" alt="" />
+      </div>
+    </div>
+  </section>
+</main>
+{% endif %}
+{% endblock %}

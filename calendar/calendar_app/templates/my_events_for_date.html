@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}События на день{%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+    <section class="container my-5">
+        <div class="row">
+
+            <h1> {{ rus_week[date.weekday()] }}, {{date.day}} {{ rus_month[date.month] }} {{date.year }}</h1>
+            <hr>
+            <i>{{ holiday_today.name }} </i><br>
+            <div class="col-12 col-lg-7 my-5">
+
+                <ul style="list-style-type: none; padding: 0;">
+
+                    <h6>Приоритет А</h6>
+                    {% for event in events %}
+                    {% if event.importance == 'A' and event.owner == current_user.user_department %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name }}</a> ({{ event.owner}})
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    <hr>
+                    <h6>Приоритет В</h6>
+
+                    {% for event in events %}
+                    {% if event.importance == 'B' and event.owner == current_user.user_department%}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name }}</a> ({{ event.owner}})
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    <hr>
+                    <h6>Приоритет C</h6>
+                    {% for event in events %}
+                    {% if event.importance == 'C' and event.owner == current_user.user_department %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name }}</a> ({{ event.owner}})
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    <hr>
+                    <h6>Приоритет Regular</h6>
+                    {% for event in events %}
+                    {% if event.importance == 'Regular' and event.owner == current_user.user_department %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name }}</a> ({{ event.owner}})
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+
+
+            </div>
+    </section>
+</main>
+{% endif %}
+{% endblock %}

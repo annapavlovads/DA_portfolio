@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Ошибка 404 {% endblock %}
+{% block content %}
+
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-12 col-lg-7 my-5">
+        <h4 class="mb-5">Если тут и была страница, теперь ее нет.</h4>
+        <p>
+          <a href="https://t.me/mks_mir_bot" target="_blank">Зато можно спросить что-то у искусственного интеллекта</a>
+        </p>
+      </div>
+      <div class="col-12 col-lg-5">
+        <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename='img/404.png') }}" alt="" />
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

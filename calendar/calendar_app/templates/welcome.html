@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="static/img/fav/fav.ico" type="image">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/img/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/img/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/img/fav/favicon-16x16.png">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <title>Event-календарь МиР</title>
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+  <header class="pt-3">
+    <div class="container">
+      <a class="navbar-brand">
+
+      </a>
+    </div>
+  </header>
+
+
+  <div
+    style="background-color: rgb(255, 255, 255); padding: 10px; margin-left: 25%; width: 30%; align-content: center;">
+    <link rel="stylesheet" href="static/css/style.css">
+    <h1><br>Добро пожаловать<br></h1><br>
+
+
+    <form method="POST" novalidate>
+      {{ form.csrf_token }}
+
+
+      {{ form.user_name(class="form-control form-control-lg py-3 mb-3", placeholder=form.user_name.label.text) }}
+      <p>
+        {% if form.user_name.errors %}
+        {% for error in form.user_name.errors %}
+        <span style="color: red">{{ error }}</span>
+        {% endfor %}
+        {% endif %}
+      </p>
+
+
+      {{ form.user_password(class="form-control form-control-lg py-3 mb-3", placeholder=form.user_password.label.text)
+      }}
+      <p>
+        {% if form.user_password.errors %}
+        {% for error in form.user_password.errors %}
+        <span style="color: red">{{ error }}</span>
+        {% endfor %}
+        {% endif %}
+      </p>
+      {{ form.submit(class="button px-5 py-3 btn") }}
+      <br>
+      <br>
+    </form>
+
+
+
+
+    <footer class="fixed-bottom text-center py-3 bg-light">
+      <a class="small" href="https://t.me/AnnaPavlovaDS">© TG: Anna Pavlova</a>
+    </footer>
+
+
+</body>
+
+</html>

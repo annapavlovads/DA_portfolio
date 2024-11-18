@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Активность пользователей в календаре {{ opinion.id }}{%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h1>Активность пользователей в календаре за неделю</h1>
+      <hr><br>
+
+      <ul style="list-style-type: none; padding-left: 20px;">
+        {% for key, value in logs.items() %}
+        <li>
+          <h6>{{ key }}</h6>
+          <ul style="list-style-type: none; padding-left: 20px;">
+            {% if value %}
+            {% for item in value %}
+            <li>{{ item[0] }} {{ item[1] }}</li>
+            {% endfor %}
+            {% else %} Нет активности<br>
+            {% endif %}
+            <br>
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+
+  </section>
+</main>
+{% endif %}
+{% endblock %}

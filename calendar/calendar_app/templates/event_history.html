@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>История события</title>
+  <style>
+    ul li {
+      font-family: Montserrat, Arial, sans-serif;
+      background-color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      color: #272727;
+    }
+  </style>
+</head>
+{% if current_user.is_authenticated %}
+
+<body>
+  <main>
+    <section class="container my-5">
+      <div class="row">
+        <ul style="list-style-type: none; padding: 30;">
+          {% for event in event_log %}
+          <li>{{ event.user_name }}: {{ event.status }} {{ event.dt.strftime('%d.%m.%Y (%H:%M)') }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
+{% endif %}

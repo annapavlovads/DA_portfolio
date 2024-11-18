@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block title %} Добавить событие {%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="'row">
+      <h1>Редактировать событие</h1>
+      <div class="col-12 col-lg-7 my-5">
+        <form method="POST" novalidate>
+          {{ form.csrf_token }}
+
+          {{ form.name(class="form-control form-control-lg py-3 mb-3", value=event.name) }}
+          <p>
+            {% if form.name.errors %}
+            {% for error in form.name.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          <label for="tag">Выберите один или несколько тегов для события. </label>
+          {{ form.tag(class="form-control form-control-lg py-3 mb-3", placeholder=form.tag.label.text) }}
+          <p>
+            {% if form.tag.errors %}
+            {% for error in form.tag.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+
+          <label for="importance">Выберите уровень важности события:</label>
+          {{ form.importance(class="form-control form-control-lg py-3 mb-3", placeholder=form.importance.label.text) }}
+          <p>
+            {% if form.importance.errors %}
+            {% for error in form.importance.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+          <label for="begin_date">Выберите дату начала события:</label>
+          {{ form.begin_date(class="form-control form-control-lg py-3 mb-3") }}
+          <p>
+            {% if form.begin_date.errors %}
+            {% for error in form.begin_date.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+          <label for="end_date">Выберите дату окончания события:</label>
+          {{ form.end_date(class="form-control form-control-lg py-3 mb-3") }}
+          <p>
+            {% if form.end_date.errors %}
+            {% for error in form.end_date.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {% if current_user.user_name == 'calendar_admin' %}
+          <label for="owner">Выберите владельца события:</label>
+          {{ form.owner(class="form-control form-control-lg py-3 mb-3", placeholder=form.owner.label.text) }}
+          <p>
+            {% if form.owner.errors %}
+            {% for error in form.owner.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+          {% endif %}
+
+          <label for="restaurant">Выберите один или несколько ресторанов для события. </label>
+          {{ form.restaurant(class="form-control form-control-lg py-3 mb-3", placeholder=form.restaurant.label.text) }}
+          <p>
+            {% if form.restaurant.errors %}
+            {% for error in form.restaurant.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+          <label for="promotion_type">Выберите один или несколько типов промо для события. </label>
+          {{ form.promotion_type(class="form-control form-control-lg py-3 mb-3", placeholder=form.promotion_type.text)
+          }}
+          <p>
+            {% if form.promotion_type.errors %}
+            {% for error in form.promotion_type.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.brief(class="form-control form-control-lg py-3 mb-3", placeholder=form.brief.label.text,
+          value=event.brief) }}
+          <p>
+            {% if form.brief.errors %}
+            {% for error in form.brief.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.picture(class="form-control form-control-lg py-3 mb-3", placeholder=form.picture.label.text,
+          value=event.picture) }}
+          <p>
+            {% if form.picture.errors %}
+            {% for error in form.picture.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.instruction(class="form-control form-control-lg py-3 mb-3", placeholder=form.instruction.label.text,
+          value=event.instruction) }}
+          <p>
+            {% if form.instruction.errors %}
+            {% for error in form.instruction.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.comment(class="form-control form-control-lg py-3 mb-3", placeholder=form.comment.label.text,
+          value=event.comment) }}
+          <p>
+            {% if form.comment.errors %}
+            {% for error in form.comment.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.submit(class="button px-5 py-3 btn") }}
+          <br>
+          <br>
+        </form>
+
+        <p class="py-3 mb-3">
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          {% for message in messages %}
+          <span style="color: red">{{ message }}</span>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+        </p>
+
+
+      </div>
+    </div>
+  </section>
+</main>
+{% endif %}
+{% endblock %}

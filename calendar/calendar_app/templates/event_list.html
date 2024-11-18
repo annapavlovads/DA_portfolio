@@ -1,0 +1,75 @@
+{% extends "base.html" %} 
+{% block title %}Найденные события{%endblock %} 
+{% block content %}
+{% if current_user.is_authenticated %} 
+  <main>
+    <section class="container my-5">
+      <div class="row">
+        <h1>Найденные события</h1>
+        Что искали: {{ summary_string }}
+        <hr>
+
+        <ul style="list-style-type: none; padding: 0;">
+
+          <h6>Приоритет A</h6>
+          {% for event in events %}
+              {% if event.importance == 'A' %}
+                      <li>
+                  <a href="{{ url_for('event_view', id=event.id) }}">
+                      {{ event.name }}</a> ({% if event.restaurant | length > 1 %}{{ event.restaurant[0] }}, + рестораны: {{event.restaurant|length}} {% else %}{{ event.restaurant[0] }}{% endif %})
+                      {% if event.is_completed == 1 %} - <span style="color: red;">Завершено!</span> {% endif %} {% if event.is_completed != 1 %} {{ event.begin_date.strftime('%d.%m.%y') }} {% endif %}
+              </li>
+      
+              {% endif %}
+          {% endfor %}<br>
+
+
+    <h6>Приоритет B</h6>
+    {% for event in events %}
+        {% if event.importance == 'B' %}
+                <li>
+            <a href="{{ url_for('event_view', id=event.id) }}">
+                {{ event.name }}</a> ({% if event.restaurant | length > 1 %}{{ event.restaurant[0] }}, + рестораны: {{event.restaurant|length}} {% else %}{{ event.restaurant[0] }}{% endif %})
+                {% if event.is_completed == 1 %} - <span style="color: red;">Завершено!</span> {% endif %} {% if event.is_completed != 1 %} {{event.begin_date.strftime('%d.%m.%y')}} {% endif %}
+        </li>
+
+        {% endif %}
+    {% endfor %}<br>
+
+    <h6>Приоритет C</h6>
+    {% for event in events %}
+        {% if event.importance == 'C' %}
+                <li>
+            <a href="{{ url_for('event_view', id=event.id) }}">
+                {{ event.name }}</a> ({% if event.restaurant | length > 1 %}{{ event.restaurant[0] }} + рестораны: {{event.restaurant|length}} {% else %}{{ event.restaurant[0] }}{% endif %})
+                {% if event.is_completed == 1 %} - <span style="color: red;">Завершено!</span> {% endif %}{% if event.is_completed != 1 %} {{event.begin_date.strftime('%d.%m.%y')}} {% endif %}
+        </li>
+
+        {% endif %}
+    {% endfor %}<br>
+
+    <h6>Приоритет Regular</h6>
+    {% for event in events %}
+        {% if event.importance == 'Regular' %}
+                <li>
+            <a href="{{ url_for('event_view', id=event.id) }}">
+                {{ event.name }}</a> ({% if event.restaurant | length > 1 %}{{ event.restaurant[0] }}, + рестораны: {{event.restaurant|length}} {% else %}{{ event.restaurant[0] }}{% endif %})
+                {% if event.is_completed == 1 %} - <span style="color: red;">Завершено!</span> {% endif %}{% if event.is_completed != 1 %} {{event.begin_date.strftime('%d.%m.%y')}} {% endif %}
+        </li>
+
+        {% endif %}
+    {% endfor %}
+
+
+
+
+
+
+</ul>
+
+          <hr>
+        </div>
+    </section>
+  </main>
+ {% endif %} 
+  {% endblock %} 

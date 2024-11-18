@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Событие под номером {{ event.id }}{%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h3> {{ event.name }} </h3>
+
+      <p style="color: red;">
+        {% if event.is_completed==1 %}
+        Событие завершено!
+        {% endif %}
+      </p>
+      <p>
+        Теги: {{ ', '.join(event.tag) }}<br><br>
+        Уровень события: {{event.importance}} <br><br>
+        Владелец события: {{ event.owner }}<br><br>
+
+        Дата начала: {{ rus_week[event.begin_date.weekday()] }}, {{event.begin_date.day}} {{
+        rus_month[event.begin_date.month] }} {{event.begin_date.year }}<br>
+        Дата окончания: {{ rus_week[event.end_date.weekday()] }}, {{event.end_date.day}} {{
+        rus_month[event.end_date.month] }} {{event.end_date.year }}<br><br>
+
+        Рестораны участия: {{ ', '.join(event.restaurant) }}<br><br>
+        Тип продвижения: {{ ', '.join(event.promotion_type) }}<br><br>
+        Ссылка на бриф: <i>{{ event.brief }}</i><br>
+        Ссылка на макет: <i> {{ event.picture }}</i><br>
+        Ссылка на инструкцию: <i> {{ event.instruction }}</i><br><br>
+        Комментарий: {% if event.comment %}
+        {{event.comment}}
+        {% endif %}<br><br>
+
+        {% if event.is_completed==1 and event.summary%}
+        Итог события: {{event.summary}}
+        <br><br>
+        {% endif %}
+
+
+        {% if current_user.user_name=='calendar_admin' or event.owner==current_user.user_department %}
+
+        {% if event.is_completed!=1 %}
+      <p>
+        <a href="{{ url_for ('edit_event_view', id=event.id) }}">Редактировать событие</a>
+      </p>
+      <p>
+        <a href="{{ url_for ('finish_event_view', id=event.id) }}">Завершить событие</a>
+      </p>
+      {% endif %}
+
+      {% if event.is_completed==1 %}
+      <p>
+        <a href="{{ url_for ('summary_event_view', id=event.id) }}">Добавить итоги события</a>
+      </p>
+
+      <p>
+        <a href="{{ url_for ('resume_event_view', id=event.id) }}">Возобновить событие</a>
+      </p>
+      {% endif %}
+
+      {% endif %}
+
+      </p>
+      <p>
+        <a href="{{ url_for ('event_history_view', id=event.id) }}"
+          onclick="window.open(this.href, 'newwindow', 'width=600,height=500'); return false;">Просмотреть историю
+          события</a>
+      </p>
+
+    </div>
+    </div>
+  </section>
+</main>
+{% endif %}
+{% endblock %}

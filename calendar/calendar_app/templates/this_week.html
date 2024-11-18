@@ -1,0 +1,383 @@
+{% extends "base.html" %} 
+{% block title %}События на неделю{%endblock %} 
+{% block content %}
+{% if current_user.is_authenticated %} 
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h3> События на неделю </h3>
+        <h6> {{week_dates[0].day}} {{ rus_month[week_dates[0].month] }} - {{week_dates[6].day}} {{ rus_month[week_dates[6].month] }} {{week_dates[6].year }}</h6>
+        <p>
+          {% if summary_string %} {{ summary_string }} <br>{% endif %}
+        </p>
+</div>
+<div style="display: flex; justify-content: space-between;">
+  <a href="{{ url_for('prev_week_view', week_begin_date=week_begin_date, filters_json_string=filters_json_string) }}" style="text-align: left;">Предыдущая неделя</a>
+  <a href="{{ url_for('next_week_view', week_begin_date=week_begin_date, filters_json_string=filters_json_string) }}" style="text-align: right;">Следующая неделя</a>
+
+</div>
+     
+
+      <hr>
+    </div>
+
+
+    <div style="display: flex; flex-wrap: wrap;">
+
+      <div style="flex: 1 1 14.28%;text-align: center;">
+        <h6>
+          <a href="{{ url_for ('events_for_date_view', needed_date_str=week_dates[0].strftime('%d.%m.%Y')) }}">
+          {{ rus_week[week_dates[0].weekday()] }}<br>
+          {{week_dates[0].day}} {{ rus_month[week_dates[0].month] }}</a><br><br>
+        </h6>
+
+      </div>
+
+        <div style="flex: 1 1 14.28%;text-align: center;">
+          <h6>
+          <a href="{{ url_for ('events_for_date_view', needed_date_str=week_dates[1].strftime('%d.%m.%Y')) }}">
+            {{ rus_week[week_dates[1].weekday()] }}<br>
+            {{week_dates[1].day}} {{ rus_month[week_dates[1].month] }}</a><br><br>
+          </h6>
+        </div>
+
+        <div style="flex: 1 1 14.28%;text-align: center;">
+          <h6>
+          <a href="{{ url_for ('events_for_date_view', needed_date_str=week_dates[2].strftime('%d.%m.%Y')) }}">
+            {{ rus_week[week_dates[2].weekday()] }}<br>
+            {{week_dates[2].day}} {{ rus_month[week_dates[2].month] }}</a><br><br>
+          </h6>
+        </div>  
+
+        <div style="flex: 1 1 14.28%;text-align: center;">
+          <h6>
+          <a href="{{ url_for ('events_for_date_view', needed_date_str=week_dates[3].strftime('%d.%m.%Y')) }}">
+            {{ rus_week[week_dates[3].weekday()] }}<br>
+            {{week_dates[3].day}} {{ rus_month[week_dates[3].month] }}</a><br><br>
+          </h6>
+        </div>
+
+        <div style="flex: 1 1 14.28%;text-align: center;">
+          <h6>
+          <a href="{{ url_for ('events_for_date_view', needed_date_str=week_dates[4].strftime('%d.%m.%Y')) }}">
+            {{ rus_week[week_dates[4].weekday()] }}<br>
+            {{week_dates[4].day}} {{ rus_month[week_dates[4].month] }}</a><br><br>
+          </h6>
+        </div>
+
+        <div style="flex: 1 1 14.28%;text-align: center;">
+          <h6>
+            <a href="{{ url_for ('events_for_date_view', needed_date_str=week_dates[5].strftime('%d.%m.%Y')) }}">
+              {{ rus_week[week_dates[5].weekday()] }}<br>
+              {{week_dates[5].day}} {{ rus_month[week_dates[5].month] }}</a><br><br>
+          </h6>
+        </div>
+
+        <div style="flex: 1 1 14.28%;text-align: center;">
+          <h6>
+            <a href="{{ url_for ('events_for_date_view', needed_date_str=week_dates[6].strftime('%d.%m.%Y')) }}">
+              {{ rus_week[week_dates[6].weekday()] }}<br>
+              {{week_dates[6].day}} {{ rus_month[week_dates[6].month] }}</a><br><br>
+          </h6>
+        </div>
+        
+<!--для событий A-->
+<div style="flex: 1 1 100%; text-align: center; "><hr><h6>Приоритет А</h6></div>
+<div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          
+          <ul style="list-style-type: none; padding: 0;">
+              {% for event in week_events[0] %}
+                  {% if event.importance == 'A' %}
+                  <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                  </a></li>
+                  {% endif %}
+              {% endfor %}
+          </ul>
+        </div>
+
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[1] %}
+                {% if event.importance == 'A' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[2] %}
+                {% if event.importance == 'A' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">          
+          <ul style="list-style-type: none; padding: 0;">
+          {% for event in week_events[3] %}
+              {% if event.importance == 'A' %}
+              <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+              </a></li>
+              {% endif %}
+          {% endfor %}
+      </ul></div>
+      <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[4] %}
+                {% if event.importance == 'A' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 0 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[5] %}
+                {% if event.importance == 'A' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 0 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[6] %}
+                {% if event.importance == 'A' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+<!--для событий B-->
+<div style="flex: 1 1 100%; text-align: center;"><hr><h6>Приоритет B</h6></div>
+<div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+              {% for event in week_events[0] %}
+                  {% if event.importance == 'B' %}
+                  <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                  </a></li>
+                  {% endif %}
+              {% endfor %}
+          </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[1] %}
+                {% if event.importance == 'B' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[2] %}
+                {% if event.importance == 'B' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 0 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[3] %}
+                {% if event.importance == 'B' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 0 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[4] %}
+                {% if event.importance == 'B' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[5] %}
+                {% if event.importance == 'B' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}">{{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[6] %}
+                {% if event.importance == 'B' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+<!--для событий C-->
+<div style="flex: 1 1 100%; text-align: center;"><hr><h6>Приоритет C</h6></div>
+<div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+              {% for event in week_events[0] %}
+                  {% if event.importance == 'C' %}
+                  <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                  </a></li>
+                  {% endif %}
+              {% endfor %}
+          </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[1] %}
+                {% if event.importance == 'C' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[2] %}
+                {% if event.importance == 'C' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[3] %}
+                {% if event.importance == 'C' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[4] %}
+                {% if event.importance == 'C' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 0 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[5] %}
+                {% if event.importance == 'C' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[6] %}
+                {% if event.importance == 'C' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+<!--для событий REGULAR-->
+<div style="flex: 1 1 100%; text-align: center;"><hr><h6>Приоритет Regular</h6></div>
+<div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+              {% for event in week_events[0] %}
+                  {% if event.importance == 'Regular' %}
+                      <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                      </a></li>
+                  {% endif %}
+              {% endfor %}
+          </ul>
+        </div>
+        <div style="flex: 1 0 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[1] %}
+                {% if event.importance == 'Regular' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[2] %}
+                {% if event.importance == 'Regular' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 0 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[3] %}
+                {% if event.importance == 'Regular' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[4] %}
+                {% if event.importance == 'Regular' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[5] %}
+                {% if event.importance == 'Regular' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div style="flex: 1 1 14.28%; padding-left: 10px; padding-right: 10px;">
+          <ul style="list-style-type: none; padding: 0;">
+            {% for event in week_events[6] %}
+                {% if event.importance == 'Regular' %}
+                <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:10] ~ ('...' if event.name | length > 10 else '') }}
+                </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+      </div>
+<hr>
+
+<br>
+
+  </section>
+</main>
+{% endif %} 
+
+{% endblock %} 

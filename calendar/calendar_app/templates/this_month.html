@@ -1,0 +1,1119 @@
+{% extends "base.html" %}
+{% block title %}События на месяц {%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+    <section class="container my-5">
+        <div class="row">
+            <h3> События на {{rus_month_from_int_to_string[this_month]}} </h3>
+            <h6> {{first_month_date.day}} -
+                {{last_month_date.day}} {{ rus_month[this_month] }} {{this_year}}</h6>
+            </div>
+            <div class="row">
+                <h6>{% if summary_string %} {{ summary_string }} <br>{% endif %}</h6>
+        </div>
+        <br>
+            <div style="display: flex; justify-content: space-between;">
+                <a href="{{ url_for('get_all_prev_month_events', this_year=this_year, this_month=this_month, filters_json_string=filters_json_string) }}" style="text-align: left;">Предыдущий месяц</a>
+                <a href="{{ url_for('get_all_next_month_events', this_year=this_year, this_month=this_month, filters_json_string=filters_json_string) }}" style="text-align: right;">Следующий месяц</a>
+            
+        </div>
+        <hr>
+
+        <div style="display: flex; flex-wrap: wrap;">
+            <!--для названий дней недели-->
+            <div style="flex: 1 1 14.28%;text-align: left;">
+                <h6>Понедельник</h6>
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left;">
+                <h6>Вторник</h6>
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left;">
+                <h6>Среда</h6>
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left;">
+                <h6>Четверг</h6>
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left;">
+                <h6>Пятница</h6>
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left;">
+                <h6>Суббота</h6>
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left;">
+                <h6>Воскресенье</h6>
+            </div>
+            <hr>
+            <!--для событий первой недели-->
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[0][0][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][0][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[0][0][0].day}}</h6>
+                </a>
+                {% if events[0][0][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[0][0][1]|length > 3 %}
+                    {% for event in events[0][0][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][0][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[0][0][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[0][1][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][1][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[0][1][0].day}}</h6>
+                </a>
+                {% if events[0][1][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[0][1][1]|length > 3 %}
+                    {% for event in events[0][1][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][1][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[0][1][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[0][2][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][2][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[0][2][0].day}}</h6>
+                </a>
+                {% if events[0][2][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[0][2][1]|length > 3 %}
+                    {% for event in events[0][2][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][2][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[0][2][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[0][3][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][3][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[0][3][0].day}}</h6>
+                </a>
+                {% if events[0][3][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[0][3][1]|length > 3 %}
+                    {% for event in events[0][3][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][3][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[0][3][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[0][4][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][4][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[0][4][0].day}}</h6>
+                </a>
+                {% if events[0][4][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[0][4][1]|length > 3 %}
+                    {% for event in events[0][4][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][4][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[0][4][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[0][5][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][5][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[0][5][0].day}}</h6>
+                </a>
+                {% if events[0][5][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[0][5][1]|length > 3 %}
+                    {% for event in events[0][5][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][5][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[0][5][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[0][6][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][6][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[0][6][0].day}}</h6>
+                </a>
+                {% if events[0][6][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[0][6][1]|length > 3 %}
+                    {% for event in events[0][6][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[0][6][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[0][6][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <!--для событий второй недели-->
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][0][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[1][0][0].day}}</h6>
+                </a>
+                {% if events[1][0][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[1][0][1]|length > 3 %}
+                    {% for event in events[1][0][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][0][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[1][0][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][1][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[1][1][0].day}}</h6>
+                </a>
+                {% if events[1][1][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[1][1][1]|length > 3 %}
+                    {% for event in events[1][1][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][1][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[1][1][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][2][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[1][2][0].day}}</h6>
+                </a>
+                {% if events[1][2][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[1][2][1]|length > 3 %}
+                    {% for event in events[1][2][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][2][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[1][2][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][3][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[1][3][0].day}}</h6>
+                </a>
+                {% if events[1][3][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[1][3][1]|length > 3 %}
+                    {% for event in events[1][3][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][3][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[1][3][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][4][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[1][4][0].day}}</h6>
+                </a>
+                {% if events[1][4][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[1][4][1]|length > 3 %}
+                    {% for event in events[1][4][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][4][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[1][4][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][5][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[1][5][0].day}}</h6>
+                </a>
+                {% if events[1][5][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[1][5][1]|length > 3 %}
+                    {% for event in events[1][5][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][5][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[1][5][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][6][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[1][6][0].day}}</h6>
+                </a>
+                {% if events[1][6][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[1][6][1]|length > 3 %}
+                    {% for event in events[1][6][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[1][6][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[1][6][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+
+
+
+
+
+            <!--для событий третей недели-->
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][0][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[2][0][0].day}}</h6>
+                </a>
+                {% if events[2][0][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[2][0][1]|length > 3 %}
+                    {% for event in events[2][0][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][0][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[2][0][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][1][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[2][1][0].day}}</h6>
+                </a>
+                {% if events[2][1][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[2][1][1]|length > 3 %}
+                    {% for event in events[2][1][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][1][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[2][1][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][2][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[2][2][0].day}}</h6>
+                </a>
+                {% if events[2][2][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[2][2][1]|length > 3 %}
+                    {% for event in events[2][2][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][2][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[2][2][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][3][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[2][3][0].day}}</h6>
+                </a>
+                {% if events[2][3][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[2][3][1]|length > 3 %}
+                    {% for event in events[2][3][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][3][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[2][3][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][4][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[2][4][0].day}}</h6>
+                </a>
+                {% if events[2][4][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[2][4][1]|length > 3 %}
+                    {% for event in events[2][4][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][4][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[2][4][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][5][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[2][5][0].day}}</h6>
+                </a>
+                {% if events[2][5][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[2][5][1]|length > 3 %}
+                    {% for event in events[2][5][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][5][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[2][5][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][6][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[2][6][0].day}}</h6>
+                </a>
+                {% if events[2][6][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[2][6][1]|length > 3 %}
+                    {% for event in events[2][6][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[2][6][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[2][6][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <!--для событий четвертой недели-->
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][0][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[3][0][0].day}}</h6>
+                </a>
+                {% if events[3][0][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[3][0][1]|length > 3 %}
+                    {% for event in events[3][0][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][0][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[3][0][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][1][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[3][1][0].day}}</h6>
+                </a>
+                {% if events[3][1][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[3][1][1]|length > 3 %}
+                    {% for event in events[3][1][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][1][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[3][1][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][2][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[3][2][0].day}}</h6>
+                </a>
+                {% if events[3][2][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[3][2][1]|length > 3 %}
+                    {% for event in events[3][2][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][2][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[3][2][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][3][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[3][3][0].day}}</h6>
+                </a>
+                {% if events[3][3][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[3][3][1]|length > 3 %}
+                    {% for event in events[3][3][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][3][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[3][3][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][4][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[3][4][0].day}}</h6>
+                </a>
+                {% if events[3][4][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[3][4][1]|length > 3 %}
+                    {% for event in events[3][4][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][4][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[3][4][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][5][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[3][5][0].day}}</h6>
+                </a>
+                {% if events[2][5][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[3][5][1]|length > 3 %}
+                    {% for event in events[3][5][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][5][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[3][5][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][6][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[3][6][0].day}}</h6>
+                </a>
+                {% if events[3][6][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[3][6][1]|length > 3 %}
+                    {% for event in events[3][6][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[3][6][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[3][6][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+
+            {% if events|length > 4 %}
+            <!--для событий пятой недели-->
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[4][0][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][0][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[4][0][0].day}}</h6>
+                </a>
+                {% if events[4][0][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[4][0][1]|length > 3 %}
+                    {% for event in events[4][0][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][0][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[4][0][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[4][1][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][1][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[4][1][0].day}}</h6>
+                </a>
+                {% if events[4][1][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[4][1][1]|length > 3 %}
+                    {% for event in events[4][1][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][1][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[4][1][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[4][2][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][2][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[4][2][0].day}}</h6>
+                </a>
+                {% if events[4][2][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[4][2][1]|length > 3 %}
+                    {% for event in events[4][2][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][2][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[4][2][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[4][3][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][3][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[4][3][0].day}}</h6>
+                </a>
+                {% if events[4][3][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[4][3][1]|length > 3 %}
+                    {% for event in events[4][3][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][3][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[4][3][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[4][4][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][4][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[4][4][0].day}}</h6>
+                </a>
+                {% if events[4][4][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[4][4][1]|length > 3 %}
+                    {% for event in events[4][4][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][4][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[4][4][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[4][5][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][5][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[4][5][0].day}}</h6>
+                </a>
+                {% if events[4][5][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[4][5][1]|length > 3 %}
+                    {% for event in events[4][5][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][5][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[4][5][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[4][6][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][6][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[4][6][0].day}}</h6>
+                </a>
+                {% if events[4][6][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[4][6][1]|length > 3 %}
+                    {% for event in events[4][6][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[4][6][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[4][6][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+            {% endif %}
+
+            {% if events|length > 5 %}
+
+
+            <!--для событий шестой недели-->
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[5][0][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][0][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[5][0][0].day}}</h6>
+                </a>
+                {% if events[5][0][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[5][0][1]|length > 3 %}
+                    {% for event in events[5][0][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][0][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[5][0][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[5][1][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][1][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[5][1][0].day}}</h6>
+                </a>
+                {% if events[5][1][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[5][1][1]|length > 3 %}
+                    {% for event in events[5][1][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][1][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[5][1][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[5][2][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][2][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[5][2][0].day}}</h6>
+                </a>
+                {% if events[5][2][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[5][2][1]|length > 3 %}
+                    {% for event in events[5][2][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][2][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[5][2][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[5][3][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][3][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[5][3][0].day}}</h6>
+                </a>
+                {% if events[5][3][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[5][3][1]|length > 3 %}
+                    {% for event in events[5][3][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][3][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[5][3][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}{% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[5][4][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][4][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[5][4][0].day}}</h6>
+                </a>
+                {% if events[5][4][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[5][4][1]|length > 3 %}
+                    {% for event in events[5][4][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][4][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[5][4][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[5][5][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][5][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[5][5][0].day}}</h6>
+                </a>
+                {% if events[5][5][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[5][5][1]|length > 3 %}
+                    {% for event in events[5][5][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][5][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[5][5][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+                {% endif %}
+            </div>
+
+            <div style="flex: 1 1 14.28%;text-align: left; min-height: 120px; max-height: 120px; ">
+                {% if events[5][6][0]%}
+                <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][6][0].strftime('%d.%m.%Y')) }}"
+                    style="display: block; text-align: left;">
+                    <h6>{{events[5][6][0].day}}</h6>
+                </a>
+                {% if events[5][6][1] %}
+                <ul style="list-style-type: none; padding: 0;">
+                    {% if events[5][6][1]|length > 3 %}
+                    {% for event in events[5][6][1][:3] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    <a href="{{ url_for ('events_for_date_view', needed_date_str=events[5][6][0].strftime('%d.%m.%Y')) }}"
+                        style="display: block; text-align: left;">
+                        <h6>[+]</h6>
+                    </a>
+                    {% else %}
+                    {% for event in events[5][6][1] %}
+                    <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name[:11] ~ '...' }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+                {% endif %}
+                {% endif %}
+            </div>
+
+            {% endif %}
+
+        </div>
+        <hr>
+
+        <br>
+
+    </section>
+</main>
+
+
+
+
+
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,116 @@
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+      url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  }
+
+
+.header button {
+    background-color: #1D8ADB;
+    border-radius: 18px;
+    color: #FFF;
+    font-size: 18px;
+}
+
+.header button:hover {
+    background-color: #1D8ADB;
+    border-radius: 18px;
+    color: #FFF;
+    font-size: 18px;
+}
+
+button {
+    background-color: #1D8ADB;
+    border-radius: 18px;
+    color: #FFF;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #1D8ADB;
+    border-radius: 18px;
+    color: #FFF;
+    font-size: 18px;
+}
+
+body {
+    font-family: Montserrat, Arial, sans-serif;
+    background-color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    color: #272727;
+}
+
+p, a {
+    font-size: 16px;
+}
+
+a.nav-link, a {
+    color: #272727;
+
+}
+
+a.nav-link:hover, a:hover {
+    color: #1D8ADB;
+}
+.nav-pills a.nav-link.active {
+    background-color: #1D8ADB;
+    border-radius: 18px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #272727
+}
+
+p.small {
+    font-size: 16px;
+    color: #1D8ADB;
+}
+.form-control-lg {
+    border-radius: 18px;
+
+}
+
+.form-control:focus {
+    background-color: #FFF;
+    border-color: #1D8ADB;
+    outline: 0;
+    box-shadow: 0 0 0 0px rgb(0, 27, 27, 27);
+  }
+
+textarea {
+    resize: none;
+}
+
+.button {
+    background-color: #1D8ADB;
+    border-radius: 18px;
+    color: #FFF;
+    font-size: 18px;
+}
+
+.button:hover {
+    background-color: #1D8ADB;
+    border-radius: 18px;
+    color: #FFF;
+    font-size: 18px;
+}
+
+.larger-checkbox {
+    transform: scale(1.5); /* Увеличиваем размер чекбокса */
+    margin-right: 5px; /* Опционально: добавляем небольшой отступ справа */
+}
+
+
+@media (max-width: 600px) {
+    p {
+        text-align: justify;
+    }
+    h1 {
+        text-align: center;
+    }
+    .navbar-brand {
+        margin: 0 auto;
+    }
+}

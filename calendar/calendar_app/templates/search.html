@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title %} Найти событие {%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="'row">
+      <h1>Найти событие</h1>
+      <h6>Укажите данные для поиска в одном или нескольких полях.</h6>
+      <h6>Если в поле ничего не выбрано, фильтр по этому полю не будет применён.</h6>
+      <div class="col-12 col-lg-7 my-5">
+        <form method="POST" novalidate>
+          {{ form.csrf_token }}
+
+          {{ form.is_completed(placeholder=form.is_completed.label.text, class="form-check-input larger-checkbox") }}
+          <label for="{{ form.is_completed.id }}" class="form-check-label">{{ form.is_completed.label.text }}</label>
+          <p>
+            {% if form.is_completed.errors %}
+            {% for error in form.is_completed.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.name(class="form-control form-control-lg py-3 mb-3", placeholder=form.name.label.text) }}
+
+          <p>
+            {% if form.name.errors %}
+            {% for error in form.name.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+
+          <label for="owner">Выберите владельца:</label>
+          {{ form.owner(class="form-control form-control-lg py-3 mb-3", placeholder=form.owner.label.text) }}
+          <p>
+            {% if form.owner.errors %}
+            {% for error in form.owner.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          <label for="period_start_date">Выберите дату начала периода поиска:</label>
+          {{ form.period_start_date(class="form-control form-control-lg py-3 mb-3",
+          placeholder=form.period_start_date.label.text) }}
+          <p>
+            {% if form.period_start_date.errors %}
+            {% for error in form.period_start_date.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+
+          <label for="period_end_date">Выберите дату окончания периода поиска:</label>
+          {{ form.period_end_date(class="form-control form-control-lg py-3 mb-3",
+          placeholder=form.period_end_date.label.text) }}
+          <p>
+            {% if form.period_end_date.errors %}
+            {% for error in form.period_end_date.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          <label for="tag">Выберите теги:</label>
+          {{ form.tag(class="form-control form-control-lg py-3 mb-3", placeholder=form.tag.label.text) }}
+          <p>
+            {% if form.tag.errors %}
+            {% for error in form.tag.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.tag_selector(placeholder=form.tag_selector.label.text, class="form-check-input larger-checkbox") }}
+          <label for="{{ form.tag_selector.id }}" class="form-check-label">{{ form.tag_selector.label.text }}</label>
+          <p>
+            {% if form.tag_selector.errors %}
+            {% for error in form.tag_selector.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+
+          <label for="importance">Выберите уровни важности:</label>
+          {{ form.importance(class="form-control form-control-lg py-3 mb-3", placeholder=form.importance.label.text) }}
+          <p>
+            {% if form.importance.errors %}
+            {% for error in form.importance.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+
+
+          <label for="restaurant">Выберите рестораны, где актуально событие:</label>
+          {{ form.restaurant(class="form-control form-control-lg py-3 mb-3", placeholder=form.restaurant.label.text) }}
+          <p>
+            {% if form.restaurant.errors %}
+            {% for error in form.restaurant.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.restaurant_selector(placeholder=form.restaurant_selector.label.text, class="form-check-input
+          larger-checkbox") }}
+          <label for="{{ form.restaurant_selector.id }}" class="form-check-label">{{ form.restaurant_selector.label.text
+            }}</label>
+          <p>
+            {% if form.restaurant_selector.errors %}
+            {% for error in form.restaurant_selector.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          <label for="promotion_type">Выберите типы промо:</label>
+          {{ form.promotion_type(class="form-control form-control-lg py-3 mb-3",
+          placeholder=form.promotion_type.label.text) }}
+          <p>
+            {% if form.promotion_type.errors %}
+            {% for error in form.promotion_type.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+          {{ form.promotion_type_selector(placeholder=form.promotion_type_selector.label.text, class="form-check-input
+          larger-checkbox") }}
+          <label for="{{ form.promotion_type_selector.id }}" class="form-check-label">{{
+            form.promotion_type_selector.label.text }}</label>
+          <p>
+            {% if form.promotion_type_selector.errors %}
+            {% for error in form.promotion_type_selector.errors %}
+            <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+          </p>
+
+
+
+          {{ form.submit(class="button px-5 py-3 btn") }}
+          <br>
+          <br>
+        </form>
+
+
+
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endif %}
+
+{% if not current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h4>Для доступа в календарь необходимо войти в свою учетную запись</h4>
+      <p>
+        <br>
+        <a href="{{ url_for ('welcome_view') }}">Войти</a>
+      </p>
+
+
+    </div>
+  </section>
+</main>
+{% endif %}
+
+{% endblock %}

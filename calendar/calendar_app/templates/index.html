@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}События на сегодня {%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h6>Вы: {{ current_user.user_department }} ({{ current_user.user_name }})</h6>
+      <h6>{{ current_user.user_description }}</h6>
+      <p>
+        <a href="{{ url_for('logout_view') }}">Выйти из учетной записи</a>
+      </p>
+      <hr>
+      <h3> Сегодня: {{ rus_week[datetime_today.weekday()] }}, {{datetime_today.day}} {{ rus_month[datetime_today.month]
+        }} {{datetime_today.year }}</h3>
+      <hr>
+      {% if current_user.user_name!='calendar_reader'%}
+      <p>
+        <a href="{{ url_for ('my_events_for_date_view', needed_date_str=datetime_today.strftime('%d.%m.%Y')) }}">Мои
+          события на сегодня</a>
+      </p>
+
+      <p>
+        <a href="{{ url_for ('my_this_week_view') }}">Мои события на эту неделю</a>
+      </p>
+
+      <p>
+        <a href="{{ url_for ('my_this_month_view') }}">Мои события на этот месяц</a>
+      </p>
+      <hr>
+      {% endif %}
+
+      <p>
+        <a href="{{ url_for ('events_for_date_view', needed_date_str=datetime_today.strftime('%d.%m.%Y')) }}">Все
+          события на сегодня</a>
+      </p>
+
+      <p>
+        <a href="{{ url_for ('this_week_view') }}">Все события на эту неделю</a>
+      </p>
+
+      <p>
+        <a href="{{ url_for ('this_month_view') }}">Все события на этот месяц</a>
+      </p>
+      <hr>
+      <p>
+        <a href="{{ url_for ('tomorrow_events_view') }}">События, которые начнутся завтра</a>
+      </p>
+      <p>
+        <a href="{{ url_for ('yesterday_events_view') }}">События, которые завершились вчера</a>
+      </p>
+      <hr>
+
+      {% if current_user.user_name=='calendar_admin'%}
+      <p>
+        <a href="{{ url_for ('user_activity_view') }}">Активность пользователей в календаре</a>
+      </p>
+      <hr>
+      {% endif %}
+
+
+
+    </div>
+  </section>
+</main>
+{% endif %}
+
+{% if not current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h4>Для доступа в календарь необходимо войти в свою учетную запись</h4>
+      <p>
+        <br>
+        <a href="{{ url_for ('welcome_view') }}">Войти</a>
+      </p>
+
+
+    </div>
+  </section>
+</main>
+{% endif %}
+
+{% endblock %}

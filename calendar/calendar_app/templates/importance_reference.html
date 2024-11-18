@@ -1,0 +1,40 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>История события</title>
+  <style>
+    ul li {
+      font-family: Montserrat, Arial, sans-serif;
+      background-color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      color: #272727;
+    }
+  </style>
+</head>
+{% if current_user.is_authenticated %}
+
+<body>
+  <main>
+    <section class="container my-5">
+      <div class="row">
+        <h1
+          style="font-family: Montserrat, Arial, sans-serif; background-color: #ffffff; line-height: 1.2; letter-spacing: 0.01em; color: #272727; padding: 10px;">
+          Справочник уровней важности события:</h1>
+
+        <ul style="list-style-type: none; padding: 30;">
+          <li>А: ...жду описание... </li>
+          <li>В: ...жду описание... </li>
+          <li>С: ...жду описание... </li>
+          <li>Regular: ...жду описание... </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+{% endif %}
+
+</html>
+{% endblock %}

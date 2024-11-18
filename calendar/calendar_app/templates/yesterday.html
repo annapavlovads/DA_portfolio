@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}События, которые завершились в этот день {%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h1> {{ rus_week[datetime_today.weekday()] }}, {{datetime_today.day}} {{ rus_month[datetime_today.month] }}
+        {{datetime_today.year }}</h1>
+      <h6>Подведите итог завершенным событиям</h6>
+      <hr>{% if holiday_today %}
+      <i>{{ holiday_today.name }}</i>
+      {% endif %}
+      <div class="col-12 col-lg-7 my-5">
+        <ul style="list-style-type: none; padding: 0;">
+
+          <h6>Приоритет А</h6>
+          {% for event in events %}
+          {% if event.importance == 'A' %}
+          <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name }}</a></li>
+          {% endif %}
+          {% endfor %}
+          <hr>
+          <h6>Приоритет В</h6>
+
+          {% for event in events %}
+          {% if event.importance == 'B' %}
+          <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name }}</a></li>
+          {% endif %}
+          {% endfor %}
+          <hr>
+          <h6>Приоритет C</h6>
+          {% for event in events %}
+          {% if event.importance == 'C' %}
+          <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name }}</a></li>
+          {% endif %}
+          {% endfor %}
+          <hr>
+          <h6>Приоритет Regular</h6>
+          {% for event in events %}
+          {% if event.importance == 'Regular' %}
+          <li><a href="{{ url_for ('event_view', id=event.id) }}"> {{ event.name }}</a></li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+        </p>
+        <hr>
+
+      </div>
+  </section>
+</main>
+{% endif %}
+{% endblock %}

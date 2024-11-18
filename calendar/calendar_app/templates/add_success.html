@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Событие добавлено успешно{%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<main>
+    <section class="container my-5">
+        <div class="row">
+            <h1>Событие добавлено успешно!</h1>
+            <div class="col-12 col-lg-7 my-5">
+                <a class="nav-link" href="{{ url_for ('event_view', id=new_id) }}">
+
+                    <input type="submit" class="button px-5 py-3 btn" value="Просмотреть событие">
+
+                </a>
+                <a class="nav-link" href="{{ url_for ('add_view') }}">
+
+                    <input type="submit" class="button px-5 py-3 btn" value="Добавить еще одно событие">
+
+                </a>
+
+            </div>
+        </div>
+    </section>
+</main>
+{% endif %}
+{% endblock %}

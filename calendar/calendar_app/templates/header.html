@@ -1,0 +1,59 @@
+<header class="pt-3">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index_view') }}">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" height="60" class="" alt="" />
+      </a>
+
+      <div style="flex: 1;text-align: center;">
+        <ul class="nav nav-pills d-flex justify-content-between">
+          <li class="nav-item pe-5">
+            <a class="nav-link" href="{{ url_for ('add_view') }}">
+              Добавить событие
+            </a>
+          </li>
+
+          <li class="nav-item pe-5">
+            <a class="nav-link" href="{{ url_for ('search_view') }}">
+              Поиск событий
+            </a>
+          </li>
+          <li class="nav-item pe-5">
+            <a class="nav-link" href="{{ url_for ('week_view') }}">
+              События на неделю
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for ('month_view') }}">
+              События на месяц
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Вторая строка для кнопки "Добавить событие" -->
+
+<form action="/fastsearch" method="get" id="search_form" style="width:80%; margin: 0 auto; ">
+
+  <div class="input-group mb-3 rounded" style="width: auto; padding-left: 80px;text-align: center;">
+    <input type="text" class="form-control rounded"
+      placeholder="Быстрый поиск незавершенного события по названию, тегу или ресторану" name="text" id="search_text">
+  </div>
+</form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchForm = document.getElementById('search_form');
+    const searchTextBox = document.getElementById('search_text');
+
+    searchTextBox.addEventListener('keydown', function (event) {
+      if (event.keyCode == 13) {
+        event.preventDefault();
+        searchForm.submit();
+      }
+    });
+  });
+</script>

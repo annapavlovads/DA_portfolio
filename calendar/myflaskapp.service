@@ -1,0 +1,14 @@
+#shell
+
+[Unit]
+Description=My Flask App
+After=network.target
+
+[Service]
+User=calendarvmadmin
+WorkingDirectory=/home/user/projects/calendar             
+ExecStart=/home/user/projects/calendar/.venv/bin/python -m flask run --host=0.0.0.0 --port=5000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

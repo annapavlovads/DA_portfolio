@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}События на неделю {%endblock %}
+{% block content %}
+{% if current_user.is_authenticated %}
+
+<main>
+  <section class="container my-5">
+    <div class="'row">
+
+      <p>
+        <a href="{{ url_for ('this_week_view') }}">Все события на эту календарную неделю</a>
+      </p>
+    </div>
+
+    <div class="col-12 col-lg-7 my-5">
+      <br>
+
+      <form method="POST" novalidate>
+        {{ form.csrf_token }}
+        <h3>Найти события на неделю</h3>
+        <h6>Если дата не указана, днем начала недели будет считаться сегодня. </h6><br>
+
+
+        <label for="date">Выберите дату начала недели:</label>
+        {{ form.week_begin_date(class="form-control form-control-lg py-3 mb-3",
+        placeholder=form.week_begin_date.label.text) }}
+        <p>
+          {% if form.week_begin_date.errors %}
+          {% for error in form.week_begin_date.errors %}
+          <span style="color: red">{{ error }}</span>
+          {% endfor %}
+          {% endif %}
+        </p>
+
+        <label for="owner">Выберите владельца события:</label>
+        {{ form.owner(class="form-control form-control-lg py-3 mb-3", placeholder=form.owner.label.text) }}
+        <p>
+          {% if form.owner.errors %}
+          {% for error in form.owner.errors %}
+          <span style="color: red">{{ error }}</span>
+          {% endfor %}
+          {% endif %}
+        </p>
+
+        <label for="tag">Выберите один или несколько тегов для события: </label>
+        {{ form.tag(class="form-control form-control-lg py-3 mb-3", placeholder=form.tag.label.text) }}
+        <p>
+          {% if form.tag.errors %}
+          {% for error in form.tag.errors %}
+          <span style="color: red">{{ error }}</span>
+          {% endfor %}
+          {% endif %}
+        </p>
+
+
+        <label for="restaurant">Выберите один или несколько ресторанов для события. </label>
+        {{ form.restaurant(class="form-control form-control-lg py-3 mb-3", placeholder=form.restaurant.label.text) }}
+        <p>
+          {% if form.restaurant.errors %}
+          {% for error in form.restaurant.errors %}
+          <span style="color: red">{{ error }}</span>
+          {% endfor %}
+          {% endif %}
+        </p>
+
+
+
+        {{ form.show_completed(placeholder=form.show_completed.label.text, class="form-check-input larger-checkbox") }}
+        <label for="{{ form.show_completed.id }}" class="form-check-label">{{ form.show_completed.label.text }}</label>
+        <p>
+          {% if form.show_completed.errors %}
+          {% for error in form.show_completed.errors %}
+          <span style="color: red">{{ error }}</span>
+          {% endfor %}
+          {% endif %}
+        </p><br>
+
+        {{ form.submit(class="button px-5 py-3 btn") }}
+        <br>
+        <br>
+      </form>
+
+
+
+    </div>
+    </div>
+  </section>
+</main>
+
+{% endif %}
+
+{% if not current_user.is_authenticated %}
+<main>
+  <section class="container my-5">
+    <div class="row">
+      <h4>Для доступа в календарь необходимо войти в свою учетную запись</h4>
+      <p>
+        <br>
+        <a href="{{ url_for ('welcome_view') }}">Войти</a>
+      </p>
+
+    </div>
+    </div>
+  </section>
+</main>
+{% endif %}
+
+{% endblock %}
