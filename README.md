@@ -14,7 +14,7 @@
 
 ## Веб-приложение `Event-календарь`
 `Python` `Flask` `Postgresql` `SQLAlchemy` `Docker` `HTML` `CSS` `JavaScript` <br><br>
-[Перейти в папку с проектом >>](https://github.com/annapavlovads/DA_portfolio/tree/main/calendar_web)  <br>
+[Перейти в папку с проектом >>](https://github.com/annapavlovads/DA_portfolio/tree/main/calendar)  <br>
 
 ## Дашборды для маркетологов и менеджеров
 `Clickhouse` `SQL` `Superset` <br><br>
