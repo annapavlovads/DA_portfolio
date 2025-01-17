@@ -29,6 +29,6 @@
 `Python` `Flask` `Postgresql` `SQLAlchemy` `Docker` `HTML` `CSS` `JavaScript` <br><br>
 [Перейти в папку с проектом >>](https://github.com/annapavlovads/DA_portfolio/tree/main/calendar_web)  <br>
 
-## Другие проекты: Телеграм-бот, парсер, AI-ассистент
+## Другие проекты: `Телеграм-бот`, парсер, `AI`-ассистент
 `Python` `Aiogram` `Openai`<br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/other)<br>
