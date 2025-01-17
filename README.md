@@ -12,10 +12,6 @@
 `DVC` `MLflow` `Docker` `Apache Airflow` `Python` `Pandas` `SQL` `Scikit-learn` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/ml_models)  <br>
 
-## Веб-приложение `Event-календарь`
-`Python` `Flask` `Postgresql` `SQLAlchemy` `Docker` `HTML` `CSS` `JavaScript` <br><br>
-[Перейти в папку с проектом >>](https://github.com/annapavlovads/DA_portfolio/tree/main/calendar_web)  <br>
-
 ## Дашборды для маркетологов и менеджеров
 `Clickhouse` `SQL` `Superset` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/dashboards) <br>
@@ -28,6 +24,10 @@
 ## Исследовательский анализ данных: мобильное приложение, клиентская база, продажи
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)  <br>
+
+## Веб-приложение `Event-календарь`
+`Python` `Flask` `Postgresql` `SQLAlchemy` `Docker` `HTML` `CSS` `JavaScript` <br><br>
+[Перейти в папку с проектом >>](https://github.com/annapavlovads/DA_portfolio/tree/main/calendar_web)  <br>
 
 ## Другие проекты: Телеграм-бот, парсер, AI-ассистент
 `Python` `Aiogram` `Openai`<br><br>
