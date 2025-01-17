@@ -28,3 +28,7 @@
 ## Исследовательский анализ данных: мобильное приложение, клиентская база, продажи
 `Python` `Pandas` `SQL` `Seaborn` `Matplotlib` <br><br>
 [Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/eda)  <br>
+
+## Другие проекты: Телеграм-бот, парсер, AI-ассистент
+`Python` `Aiogram` `Openai`<br><br>
+[Перейти в папку с проектами >>](https://github.com/annapavlovads/DA_portfolio/tree/main/other)<br>
