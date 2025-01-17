@@ -1,0 +1,8 @@
+.DS_Store
+.botvenv
+*pycache*
+.vscode/
+test.ipynb
+.env
+__pycache__/
+.mypy_cache/
